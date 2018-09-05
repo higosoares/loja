@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * CarrinhoProduto
+ *
+ * @ORM\Table(name="carrinho_produto", indexes={@ORM\Index(name="fk_carrinho_has_produto_produto1_idx", columns={"cod_produto"}), @ORM\Index(name="fk_carrinho_has_produto_carrinho1_idx", columns={"cod_carrinho"})})
+ * @ORM\Entity
+ */
+class CarrinhoProduto
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_carrinho_produto", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCarrinhoProduto;
+
+    /**
+     * @var \App\Entity\Carrinho
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Carrinho")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_carrinho", referencedColumnName="id_carrinho")
+     * })
+     */
+    private $codCarrinho;
+
+    /**
+     * @var \App\Entity\Produto
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Produto")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_produto", referencedColumnName="id_produto")
+     * })
+     */
+    private $codProduto;
+
+
+}
+

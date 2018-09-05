@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="login-page">
+		<div class="container">
+        			<h3 class="w3ls-title w3ls-title1">Realize login</h3>
+			<div class="login-body">
+                {% if error %}
+					<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+				<form action="{{ path('login') }}" method="post">
+					<label for="username">Usuario:</label>
+					<input type="text" id="username" name="_username" value="{{ last_username }}" />
+
+					<label for="password">Senha:</label>
+					<input type="password" id="password" name="_password" />
+
+					<div class="forgot-grid">
+						<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Me lembre</label>
+						<div class="forgot">
+							<a href="#">Esqueceu a senha?</a>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<input type="hidden" name="_target_path" value="/" />
+
+					<button type="submit">login</button>
+				</form>
+
+
+				{#<form action="{{ path('login_control') }}" method="post">#}
+					{#<input type="text" class="user" name="email" placeholder="Seu e-mail" required="">#}
+					{#<input type="password" name="password" class="lock" placeholder="Senha" required="">#}
+					{#<input type="submit" name="login" value="Login">#}
+					{#<div class="forgot-grid">#}
+						{#<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Me lembre</label>#}
+						{#<div class="forgot">#}
+							{#<a href="#">Esqueceu a senha?</a>#}
+						{#</div>#}
+						{#<div class="clearfix"> </div>#}
+					{#</div>#}
+				{#</form>#}
+			</div>
+			<h6> Não é cadastrado? <a href="/registro">Cadastra-se </a> </h6>
+			<div class="login-page-bottom social-icons">
+				<h5>Recover your social account</h5>
+				<ul>
+					<li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
+					<li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
+					<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
+					<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
+					<li><a href="#" class="fa fa-rss icon rss"> </a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+{% endblock %}

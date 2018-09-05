@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<meta charset="utf-8">
+		<a class="btn btn-default" href="/admin/produtoitens">Voltar</a>
+		<hr>
+		<h2 class="page-header">{{ produtoitens.idProdutoItem }}</h2>
+		<ul class="list-group">
+		<li class="list-group-item">Produto : {{ produtoitens.codProduto.nmeProduto }}</li>
+		<li class="list-group-item">Item : {{ produtoitens.codItem.nomeItem }}</li>
+
+		</ul>
+		</div>
+		</div>
+		</div>
+{% endblock %}

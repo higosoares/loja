@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Subcategoria
+ *
+ * @ORM\Table(name="subcategoria")
+ * @ORM\Entity
+ */
+class Subcategoria
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nme_subCategoria", type="string", length=45, nullable=false)
+     */
+    private $nmeSubcategoria;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_subCategoria", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idSubcategoria;
+
+
+}
+

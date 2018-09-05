@@ -1,0 +1,89 @@
+<?php
+
+namespace App\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Cliente
+ *
+ * @ORM\Table(name="cliente")
+ * @ORM\Entity
+ */
+class Cliente
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome_cliente", type="string", length=45, nullable=false)
+     */
+    private $nomeCliente;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nme_sobrenome_cliente", type="string", length=45, nullable=false)
+     */
+    private $nmeSobrenomeCliente;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dta_nasc_cliente", type="string", length=45, nullable=false)
+     */
+    private $dtaNascCliente;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="eml_cliente", type="string", length=45, nullable=false)
+     */
+    private $emlCliente;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="end_cliente", type="string", length=45, nullable=false)
+     */
+    private $endCliente;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tel_cliente", type="string", length=45, nullable=false)
+     */
+    private $telCliente;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cpf_cliente", type="string", length=45, nullable=false)
+     */
+    private $cpfCliente;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rg_cliente", type="string", length=45, nullable=false)
+     */
+    private $rgCliente;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pwd_cliente", type="string", length=45, nullable=false)
+     */
+    private $pwdCliente;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_cliente", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCliente;
+
+
+}
+

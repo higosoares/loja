@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<meta charset="utf-8">
+		<a class="btn btn-default" href="/admin/compras">Voltar</a>
+		<hr>
+		<h2 class="page-header">{{ compras.idCompra }}</h2>
+		<ul class="list-group">
+		<li class="list-group-item">Forma de pagamento : {{ compras.codFormapagamento.dscFormapagamento }}</li>
+		<li class="list-group-item">Carrinho Produto: {{ compras.codCarrinhoProduto.idCarrinhoProduto }}</li>
+		<li class="list-group-item">Desconto: {{ compras.vlrDescontoCompra }}</li>
+		<li class="list-group-item">Taxa: {{ compras.vlrTaxaCompra }}</li>
+		<li class="list-group-item">Total: {{ compras.vlrTotalCompra }}</li>
+
+		</ul>
+		</div>
+		</div>
+		</div>
+{% endblock %}

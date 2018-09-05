@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<meta charset="utf-8">
+		<a class="btn btn-default" href="/admin/cliente">Voltar</a>
+		<hr>
+		<h2 class="page-header">{{ cliente.nomeCliente }}</h2>
+		<ul class="list-group">
+		<li class="list-group-item">Sobrenome : {{ cliente.nmeSobrenomeCliente }}</li>
+		<li class="list-group-item">Endereço : {{ cliente.endCliente }}</li>
+		<li class="list-group-item">Data de Nascimento : {{ cliente.dtaNascCliente }}</li>
+		<li class="list-group-item">E-mail: {{ cliente.emlCliente }}</li>
+		<li class="list-group-item">Telefone : {{ cliente.telCliente }}</li>
+		<li class="list-group-item">CPF : {{ cliente.cpfCliente }}</li>
+		<li class="list-group-item">RG : {{ cliente.rgCliente }}</li>
+		<li class="list-group-item">Senha : {{ cliente.pwdCliente }}</li>
+
+
+		</ul>
+		</div>
+		</div>
+		</div>
+{% endblock %}

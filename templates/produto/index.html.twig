@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<meta charset="utf-8">
+<h2 class="page-header">Produtos</h2>
+<a class="btn btn-default" href="/admin">Voltar</a>
+<a class="btn btn-default" href="/admin/produto/cadastrar">Novo</a>
+<hr>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Nome</th>
+			<th>Descrição</th>
+			<th>Valor(R$)</th>
+			<th>Status Inventário</th>
+			<th>Peso(g)</th>
+			<th>Categoria_Subcategoria</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		{% for produto in produtos %}
+		<tr>
+			<th scope="row">{{ produto.idProduto }}</th>
+			<td>{{ produto.nmeProduto }}</td>
+			<td>{{ produto.dscProduto }}</td>
+			<td>{{ produto.vlrProduto }}</td>
+			<td>{{ produto.stsInventarioProduto }}</td>
+			<td>{{ produto.vlrPesoProduto }}</td>
+			<td>{{ produto.codCategoriaSubcategoria.categoriaCategoria.nmeCategoria }} / {{ produto.codCategoriaSubcategoria.subcategoriaSubcategoria.nmeSubcategoria }}</td>
+
+
+			<td><a href="/admin/produto/detalhes/{{ produto.idProduto }}" class="btn btn-success">Ver</a>
+			<a href="/admin/produto/editar/{{ produto.idProduto }}" class="btn btn-default">Editar</a>
+			<a href="/admin/produto/deletar/{{ produto.idProduto }}" class="btn btn-danger">Deletar</a>
+			</td>
+		</tr>
+		{% endfor %}
+
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<meta charset="utf-8">
+<a class="btn btn-default" href="/admin">Voltar</a>
+<a class="btn btn-default" href="/admin/carrinho/cadastrar">Novo</a>
+<hr>
+<h2 class="page-header">Carrinhos</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Cliente</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		{% for carrinho in carrinhos %}
+			<th scope="row">{{ carrinho.idCarrinho }}</th>
+			<td>{{ carrinho.codCliente.nomeCliente }}</td>
+			<td><a href="/admin/carrinho/detalhes/{{ carrinho.idCarrinho }}" class="btn btn-success">Ver</a>
+			<a href="/admin/carrinho/editar/{{ carrinho.idCarrinho }}" class="btn btn-default">Editar</a>
+			<a href="/admin/carrinho/deletar/{{ carrinho.idCarrinho }}" class="btn btn-danger">Deletar</a>
+			</td>
+			</tr>
+		{% endfor %}
+
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+
+{% endblock %}

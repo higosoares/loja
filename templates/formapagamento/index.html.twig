@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<meta charset="utf-8">
+<a class="btn btn-default" href="/admin">Voltar</a>
+<a class="btn btn-default" href="/admin/formapagamento/cadastrar">Novo</a>
+<hr>
+<h2 class="page-header">Formas de pagamento</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Nome</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		{% for formapagamento in formapagamentos %}
+			<th scope="row">{{ formapagamento.idFormapagamento }}</th>
+			<td>{{ formapagamento.dscFormapagamento }}</td>
+			<td><a href="/admin/formapagamento/detalhes/{{ formapagamento.idFormapagamento }}" class="btn btn-success">Ver</a>
+			<a href="/admin/formapagamento/editar/{{ formapagamento.idFormapagamento }}" class="btn btn-default">Editar</a>
+			<a href="/admin/formapagamento/deletar/{{ formapagamento.idFormapagamento }}" class="btn btn-danger">Deletar</a>
+			</td>
+			</tr>
+		{% endfor %}
+
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+
+{% endblock %}

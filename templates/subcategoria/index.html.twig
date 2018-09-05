@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<meta charset="utf-8">
+<a class="btn btn-default" href="/admin">Voltar</a>
+<a class="btn btn-default" href="/admin/subcategoria/cadastrar">Novo</a>
+<hr>
+<h2 class="page-header">Subcategorias</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Nome</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		{% for subcategoria in subcategorias %}
+			<th scope="row">{{ subcategoria.idSubcategoria }}</th>
+			<td>{{ subcategoria.nmeSubcategoria }}</td>
+			<td><a href="/admin/subcategoria/detalhes/{{ subcategoria.idSubcategoria }}" class="btn btn-success">Ver</a>
+			<a href="/admin/subcategoria/editar/{{ subcategoria.idSubcategoria }}" class="btn btn-default">Editar</a>
+			<a href="/admin/subcategoria/deletar/{{ subcategoria.idSubcategoria }}" class="btn btn-danger">Deletar</a>
+			</td>
+			</tr>
+		{% endfor %}
+
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+
+{% endblock %}

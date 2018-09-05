@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<meta charset="utf-8">
+<a class="btn btn-default" href="/admin">Voltar</a>
+<a class="btn btn-default" href="/admin/item/cadastrar">Novo</a>
+<hr>
+<h2 class="page-header">Itens</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Nome</th>
+			<th>Descrição</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		{% for item in itens %}
+			<th scope="row">{{ item.idItem }}</th>
+			<td>{{ item.nomeItem }}</td>
+			<td>{{ item.dscItem }}</td>
+			<td><a href="/admin/item/detalhes/{{ item.idItem }}" class="btn btn-success">Ver</a>
+			<a href="/admin/item/editar/{{ item.idItem }}" class="btn btn-default">Editar</a>
+			<a href="/admin/item/deletar/{{ item.idItem }}" class="btn btn-danger">Deletar</a>
+			</td>
+			</tr>
+		{% endfor %}
+
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+
+{% endblock %}

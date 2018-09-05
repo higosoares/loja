@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<meta charset="utf-8">
+<a class="btn btn-default" href="/admin">Voltar</a>
+<a class="btn btn-default" href="/admin/entrega/cadastrar">Novo</a>
+<hr>
+<h2 class="page-header">Entrega</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Compra</th>
+			<th>Status Entrega</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		{% for entrega in entregas %}
+			<th scope="row">{{ entrega.idEntrega }}</th>
+			<td>{{ entrega.codCompra.idCompra }}</td>
+			<td>{{ entrega.stsEntrega }}</td>
+			<td><a href="/admin/entrega/detalhes/{{ entrega.idEntrega }}" class="btn btn-success">Ver</a>
+			<a href="/admin/entrega/editar/{{ entrega.idEntrega }}" class="btn btn-default">Editar</a>
+			<a href="/admin/entrega/deletar/{{ entrega.idEntrega }}" class="btn btn-danger">Deletar</a>
+			</td>
+			</tr>
+		{% endfor %}
+
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+
+{% endblock %}

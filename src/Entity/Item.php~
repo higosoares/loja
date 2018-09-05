@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Item
+ *
+ * @ORM\Table(name="item")
+ * @ORM\Entity
+ */
+class Item
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome_item", type="string", length=45, nullable=false)
+     */
+    private $nomeItem;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dsc_item", type="string", length=45, nullable=false)
+     */
+    private $dscItem;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_item", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idItem;
+
+
+}
+

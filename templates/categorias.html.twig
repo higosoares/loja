@@ -1,0 +1,21 @@
+{% block categorias %}
+    {% for categoria in categorias %}
+      <li class="has-children">
+        <a href="/categoria/{{ categoria.idCategoria }}">{{ categoria.nmeCategoria }}</a>
+        <ul class="cd-secondary-dropdown is-hidden">
+          <li class="go-back"><a href="#">Menu</a></li>
+          <li class="see-all"><a href="products.html">Todos de {{ categoria.nmeCategoria }}</a></li>
+          <li class="has-children">
+            <a href="#">{{ categoria.nmeCategoria }}</a>
+            <ul class="is-hidden">
+                {% for item in categorias_subcategorias %}
+                    {% if item.categoriaCategoria.idCategoria == categoria.idCategoria %}
+                      <li> <a href="/subcategoria/{{ item.subcategoriaSubcategoria.idSubcategoria }}">{{ item.subcategoriaSubcategoria.nmeSubcategoria }}</a> </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+          </li>
+        </ul>
+      </li>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="login-page">
+		<div class="container">
+			<h3 class="w3ls-title w3ls-title1">Cria sua conta</h3>
+			<div class="login-body">
+      {{ form_start(form) }}
+      {{ form_widget(form) }}
+      {{ form_end(form) }}
+
+					<div class="forgot-grid">
+						<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Me lembre</label>
+						<div class="forgot">
+							<a href="#">Esqueceu a senha?</a>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+
+
+			</div>
+			<h6>Já possui uma conta? <a href="/login">Faça login »</a> </h6>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- grow -->
+<div class="grow">
+  <div class="container">
+  {% set selected = "" %}
+  {% for categoria in categoria_subcategorias %}
+  {% set selected = categoria.categoriaCategoria.nmeCategoria %}
+    {% endfor %}
+    <h2>{{ selected }}</h2>
+  </div>
+</div>
+<!-- grow -->
+<!--content-->
+<div class="pro-du">
+<div class="container">
+	<div class="cont">
+
+
+			<div class="content-top">
+					<div class="grid-in">
+
+					{% for produto in produtos %}
+					<div class="col-md-3 grid-top simpleCart_shelfItem">
+						<a href="/produto/{{ produto.idProduto }}" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('images/pi.jpg')}}" alt="">
+							<div class="b-wrapper">
+								<h3 class="b-animate b-from-left    b-delay03 ">
+									<span>{{ produto.nmeProduto }} </span>
+
+								</h3>
+							</div>
+						</a>
+					<p><a>{{ produto.nmeProduto }}</a></p>
+					<a class="item_add"><p class="number item_price"><i> </i>R${{ produto.vlrProduto }}</p></a>
+					</div>
+					{% endfor %}
+
+
+							<div class="clearfix"> </div>
+				</div><!-- cont -->
+			</div><!-- content -->
+
+
+
+
+
+			<div class="content-top">
+				<h1>NOVOS PRODUTOS</h1>
+				<div class="grid-in">
+        {% for produto in produtos if produto.idProduto > 6 %}
+					<div class="col-md-3 grid-top simpleCart_shelfItem">
+						<a href="/produto/{{ produto.idProduto }}" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="{{ asset('images/pi.jpg')}}" alt="">
+							<div class="b-wrapper">
+								<h3 class="b-animate b-from-left    b-delay03 ">
+									<span>{{ produto.nmeProduto }}</span>
+
+								</h3>
+							</div>
+						</a>
+
+					<p><a>{{ produto.nmeProduto }}</a></p>
+					<a class="item_add"><p class="number item_price"><i> </i>R${{ produto.vlrProduto }}</p></a>
+					</div>
+          {% endfor %}
+
+
+
+							<div class="clearfix"> </div>
+				</div><!-- grid-in -->
+			</div><!-- content-top -->
+	<!-- cont -->
+	</div>
+	<!-- content -->
+</div>
+<!-- pro-du --->
+</div>
+
+{% endblock %}

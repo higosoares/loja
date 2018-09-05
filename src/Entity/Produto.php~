@@ -1,0 +1,71 @@
+<?php
+
+namespace App\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Produto
+ *
+ * @ORM\Table(name="produto", indexes={@ORM\Index(name="fk_produto_categoria_subCategoria1_idx", columns={"cod_categoria_subCategoria"})})
+ * @ORM\Entity
+ */
+class Produto
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nme_produto", type="string", length=45, nullable=false)
+     */
+    private $nmeProduto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dsc_produto", type="string", length=45, nullable=false)
+     */
+    private $dscProduto;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="vlr_produto", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $vlrProduto;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="sts_inventario_produto", type="boolean", nullable=false)
+     */
+    private $stsInventarioProduto;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="vlr_peso_produto", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $vlrPesoProduto;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_produto", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idProduto;
+
+    /**
+     * @var \App\Entity\CategoriaSubcategoria
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\CategoriaSubcategoria")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cod_categoria_subCategoria", referencedColumnName="id_categoria_subCategoria")
+     * })
+     */
+    private $codCategoriaSubcategoria;
+
+
+}
+

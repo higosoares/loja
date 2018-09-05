@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<meta charset="utf-8">
+<a class="btn btn-default" href="/admin">Voltar</a>
+<a class="btn btn-default" href="/admin/cliente/cadastrar">Novo</a>
+<hr>
+<h2 class="page-header">Clientes</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Nome</th>
+			<th>Sobrenome</th>
+			<th>Endereço</th>
+			<th>Data de nascimento</th>
+			<th>E-mail</th>
+			<th>Telefone</th>
+			<th>CPF</th>
+			<th>RG</th>
+			<th>Senha</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		{% for cliente in clientes %}
+			<th scope="row">{{ cliente.idcliente }}</th>
+			<td>{{ cliente.nomeCliente }}</td>
+			<td>{{ cliente.nmeSobrenomeCliente }}</td>
+			<td>{{ cliente.endCliente }}</td>
+			<td>{{ cliente.dtaNascCliente }}</td>
+			<td>{{ cliente.emlCliente }}</td>
+			<td>{{ cliente.telCliente }}</td>
+			<td>{{ cliente.cpfCliente }}</td>
+			<td>{{ cliente.rgCliente }}</td>
+			<td>{{ cliente.pwdCliente }}</td>
+			<td><a href="/admin/cliente/detalhes/{{ cliente.idcliente }}" class="btn btn-success">Ver</a>
+			<a href="/admin/cliente/editar/{{ cliente.idcliente }}" class="btn btn-default">Editar</a>
+			<a href="/admin/cliente/deletar/{{ cliente.idcliente }}" class="btn btn-danger">Deletar</a>
+			</td>
+			</tr>
+		{% endfor %}
+
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<meta charset="utf-8">
+<a class="btn btn-default" href="/admin">Voltar</a>
+<a class="btn btn-default" href="/admin/categoria/cadastrar">Novo</a>
+<hr>
+<h2 class="page-header">Categorias</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Nome</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		{% for categoria in categorias %}
+			<th scope="row">{{ categoria.idCategoria }}</th>
+			<td>{{ categoria.nmeCategoria }}</td>
+			<td><a href="/admin/categoria/detalhes/{{ categoria.idCategoria }}" class="btn btn-success">Ver</a>
+			<a href="/admin/categoria/editar/{{ categoria.idCategoria }}" class="btn btn-default">Editar</a>
+			<a href="/admin/categoria/deletar/{{ categoria.idCategoria }}" class="btn btn-danger">Deletar</a>
+			</td>
+			</tr>
+		{% endfor %}
+
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+
+{% endblock %}

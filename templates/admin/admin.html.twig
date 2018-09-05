@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<meta charset="utf-8">
+<h2 class="page-header">Todos os itens</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Tabela</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">1</th>
+			<td>Clientes - OK</td>
+			<td><a href="{{ path('admin_clientes') }}" class="btn btn-default">Ver</a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">2</th>
+			<td>Produtos - OK</td>
+			<td><a href="{{ path('admin_produtos') }}" class="btn btn-default">Ver</a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">3</th>
+			<td>Categorias - OK</td>
+			<td><a href="{{ path('admin_categorias') }}" class="btn btn-default">Ver</a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">4</th>
+			<td>Itens - OK</td>
+			<td><a href="{{ path('admin_itens') }}" class="btn btn-default">Ver</a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">5</th>
+			<td>Subcategorias - OK</td>
+			<td><a href="{{ path('admin_subcategorias') }}" class="btn btn-default">Ver</a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">6</th>
+			<td>Formas de Pagamento - OK</td>
+			<td><a href="{{ path('admin_formapagamentos') }}" class="btn btn-default">Ver</a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">7</th>
+			<td>Produto Item - OK</td>
+			<td><a href="{{ path('admin_produtoitens') }}" class="btn btn-default">Ver</a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">8</th>
+			<td>Carrinho - OK</td>
+			<td><a href="{{ path('admin_carrinhos') }}" class="btn btn-default">Ver</a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">9</th>
+			<td>Carrinho Produto - OK</td>
+			<td><a href="{{ path('admin_carrinhoprodutos') }}" class="btn btn-default">Ver</a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">10</th>
+			<td>Categoria Subcategoria - OK</td>
+			<td><a href="{{ path('admin_categoriasubcategorias') }}" class="btn btn-default">Ver</a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">11</th>
+			<td>Compra  - OK</td>
+			<td><a href="{{ path('admin_compras') }}" class="btn btn-default">Ver</a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">12</th>
+			<td>Entrega - OK</td>
+			<td><a href="{{ path('admin_entregas') }}" class="btn btn-default">Ver</a>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">12</th>
+			<td>Visão geral</td>
+			<td><a href="#" class="btn btn-default">Ver</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+{% endblock %}
