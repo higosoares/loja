@@ -2,19 +2,17 @@
 
 namespace App\Controller\Compra;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Form\Extension\Core\Type\ButtonType;
-use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use App\Entity\Compra;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class CompraController extends Controller
+class CompraController extends AbstractController
 {
     /**
      * @Route("/compra", name="compra")
@@ -31,46 +29,44 @@ class CompraController extends Controller
      * @Route("/admin/compra/cadastrar", name="admin_cadastrar_compra")
      */
 
-    public function cadastrarCompra(Request $request)
+    public function cadastrarCompra(Request $request, EntityManagerInterface $entityManager)
     {
-      $compra = new Compra();
+        $compra = new Compra();
+
+        $form = $this->createFormBuilder($compra)
+            ->add('codFormapagamento', EntityType::class, array('class' => 'App:Formapagamento', 'choice_label' => 'dscFormapagamento', 'label' => 'Forma de pagamento', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('codCarrinhoProduto', EntityType::class, array('class' => 'App:CarrinhoProduto', 'choice_label' => 'idCarrinhoProduto', 'label' => 'Carrinho Produto', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('vlrDescontoCompra', TextType::class, array('label' => 'Desconto da compra', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('vlrTaxaCompra', TextType::class, array('label' => 'Taxa da compra', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('vlrTotalCompra', TextType::class, array('label' => 'Valor total compra', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('save', SubmitType::class, array('label' => 'Cadastrar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $codFormapagamento = $form['codFormapagamento']->getData();
+            $codCarrinhoProduto = $form['codCarrinhoProduto']->getData();
+            $vlrDescontoCompra = $form['vlrDescontoCompra']->getData();
+            $vlrTaxaCompra = $form['vlrTaxaCompra']->getData();
+            $vlrTotalCompra = $form['vlrTotalCompra']->getData();
+
+            $compra->getCodFormapagamento($codFormapagamento);
+            $compra->getCodCarrinhoProduto($codCarrinhoProduto);
+            $compra->getVlrDescontoCompra($vlrDescontoCompra);
+            $compra->getVlrTaxaCompra($vlrTaxaCompra);
+            $compra->getVlrTotalCompra($vlrTotalCompra);
 
 
-      $form = $this->createFormBuilder($compra)
-      ->add('codFormapagamento', EntityType::class, array( 'class' => 'App:Formapagamento', 'choice_label' => 'dscFormapagamento', 'label' => 'Forma de pagamento', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('codCarrinhoProduto', EntityType::class, array( 'class' => 'App:CarrinhoProduto', 'choice_label' => 'idCarrinhoProduto', 'label' => 'Carrinho Produto', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('vlrDescontoCompra', TextType::class, array('label' => 'Desconto da compra', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('vlrTaxaCompra', TextType::class, array('label' => 'Taxa da compra', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('vlrTotalCompra', TextType::class, array('label' => 'Valor total compra', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('save', SubmitType::class, array('label' => 'Cadastrar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
-      ->getForm();
+            $entityManager->persist($compra);
+            $entityManager->flush();
 
-      $form->handleRequest($request);
+            $this->addFlash('notice', 'Compra cadastrada!');
+        }
 
-      if ($form->isSubmitted() && $form->isValid()) {
-        $codFormapagamento = $form['codFormapagamento']->getData();
-        $codCarrinhoProduto = $form['codCarrinhoProduto']->getData();
-        $vlrDescontoCompra = $form['vlrDescontoCompra']->getData();
-        $vlrTaxaCompra = $form['vlrTaxaCompra']->getData();
-        $vlrTotalCompra = $form['vlrTotalCompra']->getData();
-
-        $compra->getCodFormapagamento($codFormapagamento);
-        $compra->getCodCarrinhoProduto($codCarrinhoProduto);
-        $compra->getVlrDescontoCompra($vlrDescontoCompra);
-        $compra->getVlrTaxaCompra($vlrTaxaCompra);
-        $compra->getVlrTotalCompra($vlrTotalCompra);
-
-        $em = $this->getDoctrine()->getManager();
-
-        $em->persist($compra);
-        $em->flush();
-
-        $this->addFlash('notice', 'Compra cadastrada!');
-      }
-
-      return $this->render('compra/cadastrar.html.twig', array(
-          'form' => $form->createView(),
-      ));
+        return $this->render('compra/cadastrar.html.twig', array(
+            'form' => $form->createView(),
+        ));
 
     }
 
@@ -80,57 +76,54 @@ class CompraController extends Controller
      */
     public function mostrarTodasComprasCadastradas()
     {
-      $compras = $this->getDoctrine()->getRepository('App:Compra')->findAll();
-      return $this->render('compra/index.html.twig', array('compras' => $compras));
+        $compras = $this->getDoctrine()->getRepository(Compra::class)->findAll();
+        return $this->render('compra/index.html.twig', array('compras' => $compras));
     }
 
 
     /**
      * @Route("/admin/compra/editar/{id}", name="admin_compra_editar")
      */
-    public function editarCompra($id, Request $request)
+    public function editarCompra($id, Request $request, EntityManagerInterface $entityManager)
     {
-      $compras = $this->getDoctrine()->getRepository('App:Compra')->find($id);
-      $compras->setCodFormapagamento($compras->getCodFormapagamento());
-      $compras->setCodCarrinhoProduto($compras->getCodCarrinhoProduto());
-      $compras->setVlrDescontoCompra($compras->getVlrDescontoCompra());
-      $compras->setVlrTaxaCompra($compras->getVlrTaxaCompra());
-      $compras->setVlrTotalCompra($compras->getVlrTotalCompra());
+        $compra = $this->getDoctrine()->getRepository(Compra::class)->find($id);
+        $compra->setCodFormapagamento($compra->getCodFormapagamento());
+        $compra->setCodCarrinhoProduto($compra->getCodCarrinhoProduto());
+        $compra->setVlrDescontoCompra($compra->getVlrDescontoCompra());
+        $compra->setVlrTaxaCompra($compra->getVlrTaxaCompra());
+        $compra->setVlrTotalCompra($compra->getVlrTotalCompra());
 
 
-      $form = $this->createFormBuilder($compras)
-      ->add('codFormapagamento', EntityType::class, array( 'class' => 'App:Formapagamento', 'choice_label' => 'dscFormapagamento', 'label' => 'Forma de pagamento', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('codCarrinhoProduto', EntityType::class, array( 'class' => 'App:CarrinhoProduto', 'choice_label' => 'idCarrinhoProduto', 'label' => 'Carrinho produto', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('vlrDescontoCompra', TextType::class, array('label' => 'Desconto da compra', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('vlrTaxaCompra', TextType::class, array('label' => 'Taxa da compra', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('vlrTotalCompra', TextType::class, array('label' => 'Valor total compra', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('save', SubmitType::class, array('label' => 'Editar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
-      ->getForm();
+        $form = $this->createFormBuilder($compra)
+            ->add('codFormapagamento', EntityType::class, array('class' => 'App:Formapagamento', 'choice_label' => 'dscFormapagamento', 'label' => 'Forma de pagamento', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('codCarrinhoProduto', EntityType::class, array('class' => 'App:CarrinhoProduto', 'choice_label' => 'idCarrinhoProduto', 'label' => 'Carrinho produto', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('vlrDescontoCompra', TextType::class, array('label' => 'Desconto da compra', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('vlrTaxaCompra', TextType::class, array('label' => 'Taxa da compra', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('vlrTotalCompra', TextType::class, array('label' => 'Valor total compra', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('save', SubmitType::class, array('label' => 'Editar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
+            ->getForm();
 
-      $form->handleRequest($request);
+        $form->handleRequest($request);
 
-      if($form->isSubmitted() && $form->isValid()){
-        $codFormapagamento = $form['codFormapagamento']->getData();
-        $codCarrinhoProduto = $form['codCarrinhoProduto']->getData();
-        $vlrDescontoCompra = $form['vlrDescontoCompra']->getData();
-        $vlrTaxaCompra = $form['vlrTaxaCompra']->getData();
-        $vlrTotalCompra = $form['vlrTotalCompra']->getData();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $codFormapagamento = $form['codFormapagamento']->getData();
+            $codCarrinhoProduto = $form['codCarrinhoProduto']->getData();
+            $vlrDescontoCompra = $form['vlrDescontoCompra']->getData();
+            $vlrTaxaCompra = $form['vlrTaxaCompra']->getData();
+            $vlrTotalCompra = $form['vlrTotalCompra']->getData();
 
-        $em = $this->getDoctrine()->getManager();
-        $compras= $em->getRepository('App:Compra')->find($id);
+            $compra->getCodFormapagamento($codFormapagamento);
+            $compra->getCodCarrinhoProduto($codCarrinhoProduto);
+            $compra->getVlrDescontoCompra($vlrDescontoCompra);
+            $compra->getVlrTaxaCompra($vlrTaxaCompra);
+            $compra->getVlrTotalCompra($vlrTotalCompra);
 
-        $compra->getCodFormapagamento($codFormapagamento);
-        $compra->getCodCarrinhoProduto($codCarrinhoProduto);
-        $compra->getVlrDescontoCompra($vlrDescontoCompra);
-        $compra->getVlrTaxaCompra($vlrTaxaCompra);
-        $compra->getVlrTotalCompra($vlrTotalCompra);
+            $entityManager->flush();
 
-        $em->flush();
-
-        $this->addFlash('notice', 'Compra atualizada');
-        return $this->redirectToRoute('admin_compras');
-      }
-      return $this->render('compra/editar.html.twig', array('compras' => $compras, 'form' => $form->createView()));
+            $this->addFlash('notice', 'Compra atualizada');
+            return $this->redirectToRoute('admin_compras');
+        }
+        return $this->render('compra/editar.html.twig', array('compra' => $compra, 'form' => $form->createView()));
     }
 
 
@@ -139,22 +132,22 @@ class CompraController extends Controller
      */
     public function detalhesCompra($id)
     {
-      $compras = $this->getDoctrine()->getRepository('App:Compra')->find($id);
-      return $this->render('compra/detalhes.html.twig', array('compras' => $compras));
+        $compras = $this->getDoctrine()->getRepository(Compra::class)->find($id);
+        return $this->render('compra/detalhes.html.twig', array('compras' => $compras));
 
     }
 
     /**
      * @Route("/admin/compra/deletar/{id}", name="admin_compra_deletar")
      */
-    public function deletarCompra($id)
+    public function deletarCompra($id, EntityManagerInterface $entityManager)
     {
-      $em = $this->getDoctrine()->getManager();
-      $compras = $em->getRepository('App:Compra')->find($id);
+        $em = $this->getDoctrine()->getManager();
+        $compras = $em->getRepository(Compra::class)->find($id);
 
-      $em->remove($compras);
-      $em->flush();
-      $this->addFlash('notice', 'Compra removida');
-      return $this->redirectToRoute('admin_compras');
+        $em->remove($compras);
+        $em->flush();
+        $this->addFlash('notice', 'Compra removida');
+        return $this->redirectToRoute('admin_compras');
     }
 }

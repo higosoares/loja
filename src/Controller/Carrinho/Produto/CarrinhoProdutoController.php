@@ -3,18 +3,18 @@
 namespace App\Controller\Carrinho\Produto;
 
 
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Form\Extension\Core\Type\ButtonType;
-use Symfony\Component\Form\Extension\Core\Type\ResetType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use App\Entity\CarrinhoProduto;
+use App\Entity\Carrinho;
+use App\Entity\Produto;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class CarrinhoProdutoController extends Controller
+class CarrinhoProdutoController extends AbstractController
 {
     /**
      * @Route("/carrinhoproduto", name="carrinhoproduto")
@@ -31,84 +31,77 @@ class CarrinhoProdutoController extends Controller
      * @Route("/admin/carrinhoproduto/cadastrar", name="admin_cadastrar_carrinhoproduto")
      */
 
-    public function cadastrarCarrinhoProduto(Request $request)
+    public function cadastrarCarrinhoProduto(Request $request, EntityManagerInterface $entityManager)
     {
-      $carrinhoproduto = new CarrinhoProduto();
+        $carrinhoproduto = new CarrinhoProduto();
+        
+        $form = $this->createFormBuilder($carrinhoproduto)
+            ->add('codCarrinho', EntityType::class, array('class' => Carrinho::class, 'choice_label' => 'idCarrinho', 'label' => 'Carrinho', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('codProduto', EntityType::class, array('class' => Produto::class, 'choice_label' => 'nmeProduto', 'label' => 'Produto', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('save', SubmitType::class, array('label' => 'Cadastrar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
+            ->getForm();
 
+        $form->handleRequest($request);
 
-      $form = $this->createFormBuilder($carrinhoproduto)
-      ->add('codCarrinho', EntityType::class, array( 'class' => 'App:Carrinho', 'choice_label' => 'idCarrinho', 'label' => 'Carrinho', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('codProduto', EntityType::class, array( 'class' => 'App:Produto', 'choice_label' => 'nmeProduto', 'label' => 'Produto', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('save', SubmitType::class, array('label' => 'Cadastrar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
-      ->getForm();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $codCarrinho = $form['codCarrinho']->getData();
+            $codProduto = $form['codProduto']->getData();
 
-      $form->handleRequest($request);
+            $carrinhoproduto->setCodCarrinho($codCarrinho);
+            $carrinhoproduto->setCodProduto($codProduto);
 
-      if ($form->isSubmitted() && $form->isValid()) {
-        $codCarrinho = $form['codCarrinho']->getData();
-        $codProduto = $form['codProduto']->getData();
+            $entityManager->persist($carrinhoproduto);
+            $entityManager->flush();
 
-        $carrinhoproduto->setCodCarrinho($codCarrinho);
-        $carrinhoproduto->setCodProduto($codProduto);
+            $this->addFlash('notice', 'Carrinho produto cadastrado!');
+        }
 
-        $em = $this->getDoctrine()->getManager();
-
-        $em->persist($carrinhoproduto);
-        $em->flush();
-
-        $this->addFlash('notice', 'Carrinho produto cadastrado!');
-      }
-
-      return $this->render('carrinho/produto/cadastrar.html.twig', array(
-          'form' => $form->createView(),
-      ));
+        return $this->render('carrinho/produto/cadastrar.html.twig', array(
+            'form' => $form->createView(),
+        ));
 
     }
-
 
     /**
      * @Route("/admin/carrinhoprodutos", name="admin_carrinhoprodutos")
      */
-    public function mostrarTodosCarrinhoProdutosCadastrados()
+    public function mostrarCarrinhoProdutos()
     {
-      $carrinhoprodutos = $this->getDoctrine()->getRepository('App:CarrinhoProduto')->findAll();
-      return $this->render('carrinho/produto/index.html.twig', array('carrinhoprodutos' => $carrinhoprodutos));
+        $carrinhoprodutos = $this->getDoctrine()->getRepository(CarrinhoProduto::class)->findAll();
+        return $this->render('carrinho/produto/index.html.twig', array('carrinhoprodutos' => $carrinhoprodutos));
     }
 
 
     /**
      * @Route("/admin/carrinhoproduto/editar/{id}", name="admin_carrinhoproduto_editar")
      */
-    public function editarCarrinhoProduto($id, Request $request)
+    public function editarCarrinhoProduto($id, Request $request, EntityManagerInterface $entityManager)
     {
-      $carrinhoprodutos = $this->getDoctrine()->getRepository('App:CarrinhoProduto')->find($id);
-      $carrinhoprodutos->setCodCarrinho($carrinhoprodutos->getCodCarrinho());
-      $carrinhoprodutos->setCodProduto($carrinhoprodutos->getCodProduto());
+        $carrinhoproduto = $this->getDoctrine()->getRepository(CarrinhoProduto::class)->find($id);
+        $carrinhoproduto->setCodCarrinho($carrinhoproduto->getCodCarrinho());
+        $carrinhoproduto->setCodProduto($carrinhoproduto->getCodProduto());
 
-      $form = $this->createFormBuilder($carrinhoprodutos)
-      ->add('codCarrinho', EntityType::class, array( 'class' => 'App:Carrinho', 'choice_label' => 'idCarrinho', 'label' => 'Carrinho', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('codProduto', EntityType::class, array( 'class' => 'App:Produto', 'choice_label' => 'nmeProduto', 'label' => 'Produto', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('save', SubmitType::class, array('label' => 'Editar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
-      ->getForm();
+        $form = $this->createFormBuilder($carrinhoproduto)
+            ->add('codCarrinho', EntityType::class, array('class' => Carrinho::class, 'choice_label' => 'idCarrinho', 'label' => 'Carrinho', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('codProduto', EntityType::class, array('class' => Produto::class, 'choice_label' => 'nmeProduto', 'label' => 'Produto', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('save', SubmitType::class, array('label' => 'Editar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
+            ->getForm();
 
-      $form->handleRequest($request);
+        $form->handleRequest($request);
 
-      if($form->isSubmitted() && $form->isValid()){
-        $codCarrinho = $form['codCarrinho']->getData();
-        $codProduto = $form['codProduto']->getData();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $codCarrinho = $form['codCarrinho']->getData();
+            $codProduto = $form['codProduto']->getData();
 
-        $em = $this->getDoctrine()->getManager();
-        $carrinhoprodutos= $em->getRepository('App:CarrinhoProduto')->find($id);
+            $carrinhoproduto->setCodCarrinho($codCarrinho);
+            $carrinhoproduto->setCodProduto($codProduto);
 
-        $carrinhoprodutos->setCodCarrinho($codCarrinho);
-        $carrinhoprodutos->setCodProduto($codProduto);
+            $entityManager->flush();
 
-        $em->flush();
-
-        $this->addFlash('notice', 'Carrinho Produto atualizado');
-        return $this->redirectToRoute('admin_carrinhoprodutos');
-      }
-      return $this->render('carrinho/produto/editar.html.twig', array('carrinhoprodutos' => $carrinhoprodutos, 'form' => $form->createView()));
+            $this->addFlash('notice', 'Carrinho Produto atualizado');
+            return $this->redirectToRoute('admin_carrinhoprodutos');
+        }
+        return $this->render('carrinho/produto/editar.html.twig', array('carrinhoproduto' => $carrinhoproduto, 'form' => $form->createView()));
     }
 
 
@@ -117,22 +110,21 @@ class CarrinhoProdutoController extends Controller
      */
     public function detalhesCarrinhoProduto($id)
     {
-      $carrinhoprodutos = $this->getDoctrine()->getRepository('App:CarrinhoProduto')->find($id);
-      return $this->render('carrinho/produto/detalhes.html.twig', array('carrinhoprodutos' => $carrinhoprodutos));
+        $carrinhoproduto = $this->getDoctrine()->getRepository(CarrinhoProduto::class)->find($id);
+        return $this->render('carrinho/produto/detalhes.html.twig', array('carrinhoproduto' => $carrinhoproduto));
 
     }
 
     /**
      * @Route("/admin/carrinhoproduto/deletar/{id}", name="admin_carrinhoproduto_deletar")
      */
-    public function deletarCarrinhoProduto($id)
+    public function deletarCarrinhoProduto($id, EntityManagerInterface $entityManager)
     {
-      $em = $this->getDoctrine()->getManager();
-      $carrinhoprodutos = $em->getRepository('App:CarrinhoProduto')->find($id);
+        $carrinhoproduto = $this->getDoctrine()->getRepository(CarrinhoProduto::class)->find($id);
 
-      $em->remove($carrinhoprodutos);
-      $em->flush();
-      $this->addFlash('notice', 'Carrinho produto removido');
-      return $this->redirectToRoute('admin_carrinhoprodutos');
+        $entityManager->remove($carrinhoproduto);
+        $entityManager->flush();
+        $this->addFlash('notice', 'Carrinho produto removido');
+        return $this->redirectToRoute('admin_carrinhoprodutos');
     }
 }

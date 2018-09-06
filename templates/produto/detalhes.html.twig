@@ -8,13 +8,13 @@
 <h2 class="page-header">Ver Produto</h2>
 <a class="btn btn-default" href="/admin/produtos">Voltar</a>
 <hr>
-		<h2 class="page-header">{{ produtos.nmeProduto }}</h2>
+		<h2 class="page-header">{{ produto.nmeProduto }}</h2>
 		<ul class="list-group">
-		<li class="list-group-item">Descrição: {{ produtos.dscProduto }}</li>
-		<li class="list-group-item">Valor: {{ produtos.vlrProduto }}</li>
-		<li class="list-group-item">Status Inventário: {{ produtos.stsInventarioProduto }}</li>
-		<li class="list-group-item">Peso: {{ produtos.vlrPesoProduto }}</li>
-		<li class="list-group-item">Categoria_Subcategoria: {{ produtos.codCategoriaSubcategoria.categoriaCategoria.nmeCategoria }} / {{ produtos.codCategoriaSubcategoria.subcategoriaSubcategoria.nmeSubcategoria }}</li>
+		<li class="list-group-item">Descrição: {{ produto.dscProduto }}</li>
+		<li class="list-group-item">Valor: {{ produto.vlrProduto }}</li>
+		<li class="list-group-item">Status Inventário: {{ produto.stsInventarioProduto }}</li>
+		<li class="list-group-item">Peso: {{ produto.vlrPesoProduto }}</li>
+		<li class="list-group-item">Categoria_Subcategoria: {{ produto.codCategoriaSubcategoria.categoriaCategoria.nmeCategoria }} / {{ produto.codCategoriaSubcategoria.subcategoriaSubcategoria.nmeSubcategoria }}</li>
 
 		</ul>
 		</div>

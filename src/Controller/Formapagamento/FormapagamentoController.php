@@ -2,17 +2,16 @@
 
 namespace App\Controller\Formapagamento;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Form\Extension\Core\Type\ButtonType;
-use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use App\Entity\Formapagamento;
 
-class FormapagamentoController extends Controller
+class FormapagamentoController extends AbstractController
 {
     /**
      * @Route("/formapagamento", name="formapamento")
@@ -29,34 +28,31 @@ class FormapagamentoController extends Controller
      * @Route("/admin/formapagamento/cadastrar", name="admin_cadastrar_formapagamento")
      */
 
-    public function cadastrarFormapagamento(Request $request)
+    public function cadastrarFormapagamento(Request $request, EntityManagerInterface $entityManager)
     {
-      $formapagamento = new Formapagamento();
+        $formapagamento = new Formapagamento();
 
+        $form = $this->createFormBuilder($formapagamento)
+            ->add('dscFormapagamento', TextType::class, array('label' => 'Nome', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('save', SubmitType::class, array('label' => 'Cadastrar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
+            ->getForm();
 
-      $form = $this->createFormBuilder($formapagamento)
-      ->add('dscFormapagamento', TextType::class, array('label' => 'Nome', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('save', SubmitType::class, array('label' => 'Cadastrar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
-      ->getForm();
+        $form->handleRequest($request);
 
-      $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $nome = $form['dscFormapagamento']->getData();
 
-      if ($form->isSubmitted() && $form->isValid()) {
-        $nome = $form['dscFormapagamento']->getData();
+            $formapagamento->setDscFormapagamento($nome);
 
-        $formapagamento->setDscFormapagamento($nome);
+            $entityManager->persist($formapagamento);
+            $entityManager->flush();
 
-        $em = $this->getDoctrine()->getManager();
+            $this->addFlash('notice', 'Forma de pagamento Cadastrado!');
+        }
 
-        $em->persist($formapagamento);
-        $em->flush();
-
-        $this->addFlash('notice', 'Forma de pagamento Cadastrado!');
-      }
-
-      return $this->render('formapagamento/cadastrar.html.twig', array(
-          'form' => $form->createView(),
-      ));
+        return $this->render('formapagamento/cadastrar.html.twig', array(
+            'form' => $form->createView(),
+        ));
 
     }
 
@@ -66,40 +62,37 @@ class FormapagamentoController extends Controller
      */
     public function mostrarTodasFormaspagamentoCadastrados()
     {
-      $formapagamentos = $this->getDoctrine()->getRepository('App:Formapagamento')->findAll();
-      return $this->render('formapagamento/index.html.twig', array('formapagamentos' => $formapagamentos));
+        $formapagamentos = $this->getDoctrine()->getRepository(Formapagamento::class)->findAll();
+        return $this->render('formapagamento/index.html.twig', array('formapagamentos' => $formapagamentos));
     }
 
 
     /**
      * @Route("/admin/formapagamento/editar/{id}", name="admin_formapagamento_editar")
      */
-    public function editarFormapagamento($id, Request $request)
+    public function editarFormapagamento($id, Request $request, EntityManagerInterface $entityManager)
     {
-      $formapagamentos = $this->getDoctrine()->getRepository('App:Formapagamento')->find($id);
-      $formapagamentos->setDscFormapagamento($formapagamentos->getDscFormapagamento());
+        $formapagamento = $this->getDoctrine()->getRepository(Formapagamento::class)->find($id);
+        $formapagamento->setDscFormapagamento($formapagamento->getDscFormapagamento());
 
-      $form = $this->createFormBuilder($formapagamentos)
-      ->add('dscFormapagamento', TextType::class, array('label' => 'Nome', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('save', SubmitType::class, array('label' => 'Editar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
-      ->getForm();
+        $form = $this->createFormBuilder($formapagamento)
+            ->add('dscFormapagamento', TextType::class, array('label' => 'Nome', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('save', SubmitType::class, array('label' => 'Editar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
+            ->getForm();
 
-      $form->handleRequest($request);
+        $form->handleRequest($request);
 
-      if($form->isSubmitted() && $form->isValid()){
-        $nome = $form['dscFormapagamento']->getData();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $nome = $form['dscFormapagamento']->getData();
 
-        $em = $this->getDoctrine()->getManager();
-        $formapagamentos= $em->getRepository('App:Formapagamento')->find($id);
+            $formapagamento->setDscFormapagamento($nome);
 
-        $formapagamentos->setDscFormapagamento($nome);
+            $entityManager->flush();
 
-        $em->flush();
-
-        $this->addFlash('notice', 'Forma de pagamento Atualizado');
-        return $this->redirectToRoute('admin_formapagamentos');
-      }
-      return $this->render('formapagamento/editar.html.twig', array('formapagamentos' => $formapagamentos, 'form' => $form->createView()));
+            $this->addFlash('notice', 'Forma de pagamento Atualizado');
+            return $this->redirectToRoute('admin_formapagamentos');
+        }
+        return $this->render('formapagamento/editar.html.twig', array('formapagamentos' => $formapagamentos, 'form' => $form->createView()));
     }
 
 
@@ -108,22 +101,21 @@ class FormapagamentoController extends Controller
      */
     public function detalhesFormapagamento($id)
     {
-      $formapagamentos = $this->getDoctrine()->getRepository('App:Formapagamento')->find($id);
-      return $this->render('formapagamento/detalhes.html.twig', array('formapagamentos' => $formapagamentos));
+        $formapagamento = $this->getDoctrine()->getRepository(Formapagamento::class)->find($id);
+        return $this->render('formapagamento/detalhes.html.twig', array('formapagamento' => $formapagamento));
 
     }
 
     /**
      * @Route("/admin/formapagamento/deletar/{id}", name="admin_formapagamento_deletar")
      */
-    public function deletarFormapagamento($id)
+    public function deletarFormapagamento($id, EntityManagerInterface $entityManager)
     {
-      $em = $this->getDoctrine()->getManager();
-      $formapagamentos = $em->getRepository('App:Formapagamento')->find($id);
+        $formapagamento = $this->getDoctrine()->getRepository(Formapagamento::class)->find($id);
 
-      $em->remove($formapagamentos);
-      $em->flush();
-      $this->addFlash('notice', 'Forma de pagamento Removido');
-      return $this->redirectToRoute('admin_formapagamentos');
+        $entityManager->remove($formapagamento);
+        $entityManager->flush();
+        $this->addFlash('notice', 'Forma de pagamento Removido');
+        return $this->redirectToRoute('admin_formapagamentos');
     }
 }

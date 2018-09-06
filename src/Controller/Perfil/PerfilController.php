@@ -9,7 +9,9 @@
 namespace App\Controller\Perfil;
 
 
-class PerfilController
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+class PerfilController extends AbstractController
 {
 
 }

@@ -22,20 +22,20 @@
 	</thead>
 	<tbody>
 
-		{% for produto in produtos %}
+		{% for prod in produto %}
 		<tr>
-			<th scope="row">{{ produto.idProduto }}</th>
-			<td>{{ produto.nmeProduto }}</td>
-			<td>{{ produto.dscProduto }}</td>
-			<td>{{ produto.vlrProduto }}</td>
-			<td>{{ produto.stsInventarioProduto }}</td>
-			<td>{{ produto.vlrPesoProduto }}</td>
-			<td>{{ produto.codCategoriaSubcategoria.categoriaCategoria.nmeCategoria }} / {{ produto.codCategoriaSubcategoria.subcategoriaSubcategoria.nmeSubcategoria }}</td>
+			<th scope="row">{{ prod.idProduto }}</th>
+			<td>{{ prod.nmeProduto }}</td>
+			<td>{{ prod.dscProduto }}</td>
+			<td>{{ prod.vlrProduto }}</td>
+			<td>{{ prod.stsInventarioProduto }}</td>
+			<td>{{ prod.vlrPesoProduto }}</td>
+			<td>{{ prod.codCategoriaSubcategoria.categoriaCategoria.nmeCategoria }} / {{ prod.codCategoriaSubcategoria.subcategoriaSubcategoria.nmeSubcategoria }}</td>
 
 
-			<td><a href="/admin/produto/detalhes/{{ produto.idProduto }}" class="btn btn-success">Ver</a>
-			<a href="/admin/produto/editar/{{ produto.idProduto }}" class="btn btn-default">Editar</a>
-			<a href="/admin/produto/deletar/{{ produto.idProduto }}" class="btn btn-danger">Deletar</a>
+			<td><a href="/admin/produto/detalhes/{{ prod.idProduto }}" class="btn btn-success">Ver</a>
+			<a href="/admin/produto/editar/{{ prod.idProduto }}" class="btn btn-default">Editar</a>
+			<a href="/admin/produto/deletar/{{ prod.idProduto }}" class="btn btn-danger">Deletar</a>
 			</td>
 		</tr>
 		{% endfor %}

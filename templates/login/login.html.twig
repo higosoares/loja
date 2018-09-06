@@ -18,13 +18,16 @@
 					<input type="password" id="password" name="_password" />
 
 					<div class="forgot-grid">
-						<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Me lembre</label>
+						<label class="checkbox"><input type="checkbox" id="remember_me" name="remember_me"><i></i>Me lembre</label>
 						<div class="forgot">
 							<a href="#">Esqueceu a senha?</a>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
 					<input type="hidden" name="_target_path" value="/" />
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
 
 					<button type="submit">login</button>
 				</form>

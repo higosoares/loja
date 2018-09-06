@@ -1,16 +1,17 @@
 <?php
 
 namespace App\Controller\Subcategoria;
+
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Form\Extension\Core\Type\ButtonType;
-use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use App\Entity\Subcategoria;
 use App\Entity\CategoriaSubcategoria;
+use App\Entity\Produto;
 
 class SubcategoriaController extends AbstractController
 {
@@ -19,15 +20,15 @@ class SubcategoriaController extends AbstractController
      */
     public function mostrarSubcategoria($id)
     {
-        $subcategorias = $this->getDoctrine()->getRepository(Subcategoria::class)->find($id);
-        $categorias_subcategorias = $this->getDoctrine()->getRepository(CategoriaSubcategoria::class)->findBy(
-            array('subcategoriaSubcategoria' => $subcategorias)
+        $subcategoria = $this->getDoctrine()->getRepository(Subcategoria::class)->find($id);
+        $categorias_subcategoria = $this->getDoctrine()->getRepository(CategoriaSubcategoria::class)->findBy(
+            array('subcategoriaSubcategoria' => $subcategoria)
         );
-        $produtos = $this->getDoctrine()->getRepository('App:Produto')->findBy(
-            array('codCategoriaSubcategoria' => $categorias_subcategorias)
+        $produto = $this->getDoctrine()->getRepository(Produto::class)->findBy(
+            array('codCategoriaSubcategoria' => $categorias_subcategoria)
         );
         return $this->render('subcategoria/subcategoria.html.twig', [
-            'produtos' => $produtos
+            'produto' => $produto
         ]);
     }
 
@@ -37,34 +38,31 @@ class SubcategoriaController extends AbstractController
      * @Route("/admin/subcategoria/cadastrar", name="admin_cadastrar_subcategoria")
      */
 
-    public function cadastrarSubcategoria(Request $request)
+    public function cadastrarSubcategoria(Request $request, EntityManagerInterface $entityManager)
     {
-      $subcategoria = new Subcategoria();
+        $subcategoria = new Subcategoria();
 
+        $form = $this->createFormBuilder($subcategoria)
+            ->add('nmeSubcategoria', TextType::class, array('label' => 'Nome', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('save', SubmitType::class, array('label' => 'Cadastrar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
+            ->getForm();
 
-      $form = $this->createFormBuilder($subcategoria)
-      ->add('nmeSubcategoria', TextType::class, array('label' => 'Nome', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('save', SubmitType::class, array('label' => 'Cadastrar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
-      ->getForm();
+        $form->handleRequest($request);
 
-      $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $nome = $form['nmeSubcategoria']->getData();
 
-      if ($form->isSubmitted() && $form->isValid()) {
-        $nome = $form['nmeSubcategoria']->getData();
+            $subcategoria->setNmeSubcategoria($nome);
 
-        $subcategoria->setNmeSubcategoria($nome);
+            $entityManager->persist($subcategoria);
+            $entityManager->flush();
 
-        $em = $this->getDoctrine()->getManager();
+            $this->addFlash('notice', 'SubCategoria cadastrada!');
+        }
 
-        $em->persist($subcategoria);
-        $em->flush();
-
-        $this->addFlash('notice', 'SubCategoria cadastrada!');
-      }
-
-      return $this->render('subcategoria/cadastrar.html.twig', array(
-          'form' => $form->createView(),
-      ));
+        return $this->render('subcategoria/cadastrar.html.twig', array(
+            'form' => $form->createView(),
+        ));
 
     }
 
@@ -72,42 +70,39 @@ class SubcategoriaController extends AbstractController
     /**
      * @Route("/admin/subcategorias", name="admin_subcategorias")
      */
-    public function mostrarTodasSubcategoriasCadastradas()
+    public function mostrarSubcategorias()
     {
-      $subcategorias = $this->getDoctrine()->getRepository('App:SubCategoria')->findAll();
-      return $this->render('subcategoria/index.html.twig', array('subcategorias' => $subcategorias));
+        $subcategorias = $this->getDoctrine()->getRepository(Subcategoria::class)->findAll();
+        return $this->render('subcategoria/index.html.twig', array('subcategorias' => $subcategorias));
     }
 
 
     /**
      * @Route("/admin/subcategoria/editar/{id}", name="admin_subcategoria_editar")
      */
-    public function editarSubcategoria($id, Request $request)
+    public function editarSubcategoria($id, Request $request, EntityManagerInterface $entityManager)
     {
-      $subcategorias = $this->getDoctrine()->getRepository('App:SubCategoria')->find($id);
-      $subcategorias->setNmeSubcategoria($subcategorias->getNmeSubcategoria());
+        $subcategoria = $this->getDoctrine()->getRepository(Subcategoria::class)->find($id);
+        $subcategoria->setNmeSubcategoria($subcategoria->getNmeSubcategoria());
 
-      $form = $this->createFormBuilder($subcategorias)
-      ->add('nmeSubcategoria', TextType::class, array('label' => 'Nome', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
-      ->add('save', SubmitType::class, array('label' => 'Editar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
-      ->getForm();
+        $form = $this->createFormBuilder($subcategoria)
+            ->add('nmeSubcategoria', TextType::class, array('label' => 'Nome', 'attr' => array('class' => 'form-control form-control-login', 'style' => 'margin-bottom:15px')))
+            ->add('save', SubmitType::class, array('label' => 'Editar', 'attr' => array('class' => 'btn btn-default', 'style' => 'margin-left:30%')))
+            ->getForm();
 
-      $form->handleRequest($request);
+        $form->handleRequest($request);
 
-      if($form->isSubmitted() && $form->isValid()){
-        $nome = $form['nmeSubcategoria']->getData();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $nome = $form['nmeSubcategoria']->getData();
 
-        $em = $this->getDoctrine()->getManager();
-        $subcategorias= $em->getRepository('App:SubCategoria')->find($id);
+            $subcategoria->setNmeSubcategoria($nome);
 
-        $subcategorias->setNmeSubcategoria($nome);
+            $entityManager->flush();
 
-        $em->flush();
-
-        $this->addFlash('notice', 'SubCategoria atualizada');
-        return $this->redirectToRoute('admin_subcategorias');
-      }
-      return $this->render('subcategoria/editar.html.twig', array('subcategorias' => $subcategorias, 'form' => $form->createView()));
+            $this->addFlash('notice', 'SubCategoria atualizada');
+            return $this->redirectToRoute('admin_subcategorias');
+        }
+        return $this->render('subcategoria/editar.html.twig', array('subcategoria' => $subcategoria, 'form' => $form->createView()));
     }
 
 
@@ -116,22 +111,21 @@ class SubcategoriaController extends AbstractController
      */
     public function detalhesSubcategoria($id)
     {
-      $subcategorias = $this->getDoctrine()->getRepository('App:SubCategoria')->find($id);
-      return $this->render('subcategoria/detalhes.html.twig', array('subcategorias' => $subcategorias));
+        $subcategoria = $this->getDoctrine()->getRepository(Subcategoria::class)->find($id);
+        return $this->render('subcategoria/detalhes.html.twig', array('subcategoria' => $subcategoria));
 
     }
 
     /**
      * @Route("/admin/subcategoria/deletar/{id}", name="admin_subcategoria_deletar")
      */
-    public function deletarSubcategoria($id)
+    public function deletarSubcategoria($id, EntityManagerInterface $entityManager)
     {
-      $em = $this->getDoctrine()->getManager();
-      $subcategorias = $em->getRepository('App:SubCategoria')->find($id);
+        $subcategoria = $this->getDoctrine()->getRepository(Subcategoria::class)->find($id);
 
-      $em->remove($subcategorias);
-      $em->flush();
-      $this->addFlash('notice', 'SubCategoria Removida');
-      return $this->redirectToRoute('admin_subcategorias');
+        $entityManager->remove($subcategoria);
+        $entityManager->flush();
+        $this->addFlash('notice', 'SubCategoria Removida');
+        return $this->redirectToRoute('admin_subcategorias');
     }
 }

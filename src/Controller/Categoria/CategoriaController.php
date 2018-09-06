@@ -9,11 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Form\Extension\Core\Type\ButtonType;
-use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use App\Entity\Categoria;
+use App\Entity\Produto;
 
 class CategoriaController extends AbstractController
 {
@@ -24,7 +23,7 @@ class CategoriaController extends AbstractController
     {
         $categoria_subcategorias = $this->getDoctrine()->getRepository(CategoriaSubcategoria::class)->findBy(array('categoriaCategoria' => $id));
         //var_dump($categoria_subcategoria);
-        $produtos = $this->getDoctrine()->getRepository('App:Produto')->findBy(array('codCategoriaSubcategoria' => $categoria_subcategorias));
+        $produtos = $this->getDoctrine()->getRepository(Produto::class )->findBy(array('codCategoriaSubcategoria' => $categoria_subcategorias));
         /*->createQueryBuilder("JOIN categoria_subcategoria, cs on p.cod_categoria_subCategoria=cs.id_categoria_subCategoria JOIN categoria, c on c.id_categoria=cs.categoria_id_categoria JOIN subcategoria, s on s.id_subCategoria=cs.subCategoria_id_subCategoria")
         ->select("p.idProduto, p.nmeProduto, p.vlProduto, c.nmeCategoria ")
         ->getQuery()->getResult();*/

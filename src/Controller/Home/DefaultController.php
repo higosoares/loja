@@ -2,11 +2,14 @@
 
 namespace App\Controller\Home;
 
+use App\Entity\Categoria;
+use App\Entity\Produto;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
-class DefaultController extends Controller
+
+class DefaultController extends AbstractController
 {
 
     /**
@@ -22,8 +25,8 @@ class DefaultController extends Controller
      */
     public function mostrarMenuAction()
     {
-        $produtos = $this->getDoctrine()->getRepository('App:Produto')->findAll();
-        $categorias = $this->getDoctrine()->getRepository('App:Categoria')->findAll();
+        $produtos = $this->getDoctrine()->getRepository(Produto::class)->findAll();
+        $categorias = $this->getDoctrine()->getRepository(Categoria::class)->findAll();
         return $this->render('produtosECategorias.html.twig',array('produtos' => $produtos, 'categorias' => $categorias)
 
         );
