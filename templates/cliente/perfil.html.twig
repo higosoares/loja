@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
+{%  block stylesheets %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/masks.js') }}"></script>
+{% endblock %}
 {% block body %}
+    <div class="perfil">
     <div class="col-md-3 ">
         <div class="list-group ">
             <a href="#" class="list-group-item list-group-item-action active">Informações pessoais</a>
@@ -10,73 +15,82 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h4>Seu perfil</h4>
-                        <hr>
-                    </div>
+                    <h4>Seu perfil</h4>
+                    <hr>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <form>
+                        <form method="POST" action="/cliente/editar">
+                            <input id="id_cliente" name="id_cliente" value="{{ cliente.idCliente }}" class="form-control here" hidden type="text">
                             <div class="form-group row">
-                                <label for="username" class="col-4 col-form-label">User Name*</label>
+                                <label for="username" class="col-4 col-form-label">Nome*</label>
                                 <div class="col-8">
-                                    <input id="username" name="username" placeholder="Username" class="form-control here" required="required" type="text">
+                                    <input id="nome_cliente" name="nome_cliente" value="{{ app.user.username }}" class="form-control here" required="required" type="text">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="name" class="col-4 col-form-label">First Name</label>
+                                <label for="name" class="col-4 col-form-label">Sobrenome*</label>
                                 <div class="col-8">
-                                    <input id="name" name="name" placeholder="First Name" class="form-control here" type="text">
+                                    <input id="nme_sobrenome_cliente" name="nme_sobrenome_cliente" value="{{ cliente.nmeSobrenomeCliente }}" class="form-control here" required="required" type="text">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="lastname" class="col-4 col-form-label">Last Name</label>
+                                <label for="select" class="col-4 col-form-label">Data de Nascimento*</label>
                                 <div class="col-8">
-                                    <input id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="text" class="col-4 col-form-label">Nick Name*</label>
-                                <div class="col-8">
-                                    <input id="text" name="text" placeholder="Nick Name" class="form-control here" required="required" type="text">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="select" class="col-4 col-form-label">Display Name public as</label>
-                                <div class="col-8">
-                                    <select id="select" name="select" class="custom-select">
-                                        <option value="admin">Admin</option>
-                                    </select>
+                                    <input id="dta_nasc_cliente" name="dta_nasc_cliente" value="{{ cliente.dtaNascCliente }}" class="form-control here" required="required" type="date">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="email" class="col-4 col-form-label">Email*</label>
                                 <div class="col-8">
-                                    <input id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text">
+                                    <input id="eml_cliente" name="eml_cliente" class="form-control here" value="{{ cliente.emlCliente }}" required="required" type="text">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="website" class="col-4 col-form-label">Website</label>
+                                <label for="publicinfo" class="col-4 col-form-label">Endereço*</label>
                                 <div class="col-8">
-                                    <input id="website" name="website" placeholder="website" class="form-control here" type="text">
+                                    <input id="end_cliente" name="end_cliente" class="form-control here" value="{{ cliente.endCliente }}" required="required" type="text">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="publicinfo" class="col-4 col-form-label">Public Info</label>
+                                <label for="newpass" class="col-4 col-form-label">Telefone*</label>
                                 <div class="col-8">
-                                    <textarea id="publicinfo" name="publicinfo" cols="40" rows="4" class="form-control"></textarea>
+                                    <input id="tel_cliente" name="tel_cliente" class="form-control here" value="{{ cliente.telCliente }}" required="required" type="text">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="newpass" class="col-4 col-form-label">New Password</label>
+                                <label for="newpass" class="col-4 col-form-label">CPF*</label>
                                 <div class="col-8">
-                                    <input id="newpass" name="newpass" placeholder="New Password" class="form-control here" type="text">
+                                    <input id="cpf_cliente" name="cpf_cliente" class="form-control here" value="{{ cliente.cpfCliente }}" placeholder="000.000.000-00" required="required" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="website" class="col-4 col-form-label">RG*</label>
+                                <div class="col-8">
+                                    <input id="rg_cliente" name="rg_cliente" class="form-control here" type="text" value="{{ cliente.rgCliente }}" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="text" class="col-4 col-form-label">Login*</label>
+                                <div class="col-8">
+                                    <input id="login" name="login" class="form-control here" required="required" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="newpass" class="col-4 col-form-label">Senha*</label>
+                                <div class="col-8">
+                                    <input id="pwd_cliente" name="pwd_cliente" value="{{ app.user.password }}" class="form-control here" required="required" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="newpass" class="col-4 col-form-label">Nova senha</label>
+                                <div class="col-8">
+                                    <input id="novasenha" name="novasenha"  class="form-control here" required="required" type="text">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="offset-4 col-8">
-                                    <button name="submit" type="submit" class="btn btn-primary">Update My Profile</button>
+                                    <button name="submit" type="submit" class="btn btn-primary center-block">Atualizar</button>
                                 </div>
                             </div>
                         </form>
@@ -85,6 +99,7 @@
 
             </div>
         </div>
+    </div>
     </div>
 {% endblock %}
 
