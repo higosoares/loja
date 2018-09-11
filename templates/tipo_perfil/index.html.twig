@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TipoPerfil index{% endblock %}
+
+{% block body %}
+    <h1>TipoPerfil index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdTipoPerfil</th>
+                <th>TxNomeTipoPerfil</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tipo_perfil in tipo_perfils %}
+            <tr>
+                <td>{{ tipo_perfil.idTipoPerfil }}</td>
+                <td>{{ tipo_perfil.txNomeTipoPerfil }}</td>
+                <td>
+                    <a href="{{ path('tipo_perfil_show', {'idTipoPerfil': tipo_perfil.idTipoPerfil}) }}">show</a>
+                    <a href="{{ path('tipo_perfil_edit', {'idTipoPerfil': tipo_perfil.idTipoPerfil}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('tipo_perfil_new') }}">Create new</a>
+{% endblock %}

@@ -34,14 +34,14 @@ DROP TABLE IF EXISTS `lojaVirtual`.`cliente` ;
 
 CREATE TABLE IF NOT EXISTS `lojaVirtual`.`cliente` (
   `id_cliente` INT NOT NULL AUTO_INCREMENT,
-  `nome_cliente` VARCHAR(45) NOT NULL,
-  `nme_sobrenome_cliente` VARCHAR(45) NOT NULL,
-  `dta_nasc_cliente` VARCHAR(45) NOT NULL,
+  `nome_cliente` VARCHAR(255) NOT NULL,
+  `nme_sobrenome_cliente` VARCHAR(255) NOT NULL,
+  `dta_nasc_cliente` DATE NOT NULL,
   `eml_cliente` VARCHAR(45) NOT NULL,
   `end_cliente` VARCHAR(45) NOT NULL,
-  `tel_cliente` VARCHAR(45) NOT NULL,
-  `cpf_cliente` VARCHAR(45) NOT NULL,
-  `rg_cliente` VARCHAR(45) NOT NULL,
+  `tel_cliente` VARCHAR(11) NOT NULL,
+  `cpf_cliente` VARCHAR(11) NOT NULL,
+  `rg_cliente` VARCHAR(7) NULL,
   `pwd_cliente` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_cliente`))
 ENGINE = InnoDB;
@@ -247,6 +247,41 @@ CREATE TABLE IF NOT EXISTS `lojaVirtual`.`produto_item` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `lojaVirtual`.`tipo_perfil`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `lojaVirtual`.`tipo_perfil` ;
+
+CREATE TABLE IF NOT EXISTS `lojaVirtual`.`tipo_perfil` (
+  `id_tipo_perfil` INT NOT NULL AUTO_INCREMENT,
+  `tx_nome_tipo_perfil` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_tipo_perfil`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `lojaVirtual`.`perfil`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `lojaVirtual`.`perfil` ;
+
+CREATE TABLE IF NOT EXISTS `lojaVirtual`.`perfil` (
+  `cod_tipo_perfil` INT NOT NULL,
+  `cod_cliente` INT NOT NULL,
+  INDEX `fk_perfil_tipo_perfil1_idx` (`cod_tipo_perfil` ASC) ,
+  INDEX `fk_perfil_cliente1_idx` (`cod_cliente` ASC) ,
+  CONSTRAINT `fk_perfil_tipo_perfil1`
+    FOREIGN KEY (`cod_tipo_perfil`)
+    REFERENCES `lojaVirtual`.`tipo_perfil` (`id_tipo_perfil`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_perfil_cliente1`
+    FOREIGN KEY (`cod_cliente`)
+    REFERENCES `lojaVirtual`.`cliente` (`id_cliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
@@ -268,7 +303,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `lojaVirtual`;
-INSERT INTO `lojaVirtual`.`cliente` (`id_cliente`, `nome_cliente`, `nme_sobrenome_cliente`, `dta_nasc_cliente`, `eml_cliente`, `end_cliente`, `tel_cliente`, `cpf_cliente`, `rg_cliente`, `pwd_cliente`) VALUES (1, 'Higo', 'Soares', '1995-10-30', 'higo@gmail.com', 'Q X Conjunto Y Casa Z', '6111112222', '10123589520', '2355667', 'higo');
+INSERT INTO `lojaVirtual`.`cliente` (`id_cliente`, `nome_cliente`, `nme_sobrenome_cliente`, `dta_nasc_cliente`, `eml_cliente`, `end_cliente`, `tel_cliente`, `cpf_cliente`, `rg_cliente`, `pwd_cliente`) VALUES (1, 'Higo', 'Soares', '1995-10-30', 'higo@gmail.com', 'Q X Conjunto Y Casa Z', '61998287726', '10123589520', '2355667', 'higo');
+INSERT INTO `lojaVirtual`.`cliente` (`id_cliente`, `nome_cliente`, `nme_sobrenome_cliente`, `dta_nasc_cliente`, `eml_cliente`, `end_cliente`, `tel_cliente`, `cpf_cliente`, `rg_cliente`, `pwd_cliente`) VALUES (2, 'Admin', 'Admin', '1995-10-30', 'admin@admin.com', 'Site', '2222222222', '11111111111', '1233445', 'admin');
 
 COMMIT;
 
@@ -380,6 +416,28 @@ COMMIT;
 START TRANSACTION;
 USE `lojaVirtual`;
 INSERT INTO `lojaVirtual`.`produto_item` (`id_produto_item`, `cod_produto`, `cod_item`) VALUES (1, 4, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `lojaVirtual`.`tipo_perfil`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `lojaVirtual`;
+INSERT INTO `lojaVirtual`.`tipo_perfil` (`id_tipo_perfil`, `tx_nome_tipo_perfil`) VALUES (1, 'Admin');
+INSERT INTO `lojaVirtual`.`tipo_perfil` (`id_tipo_perfil`, `tx_nome_tipo_perfil`) VALUES (2, 'User');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `lojaVirtual`.`perfil`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `lojaVirtual`;
+INSERT INTO `lojaVirtual`.`perfil` (`cod_tipo_perfil`, `cod_cliente`) VALUES (1, 2);
+INSERT INTO `lojaVirtual`.`perfil` (`cod_tipo_perfil`, `cod_cliente`) VALUES (2, 1);
 
 COMMIT;
 

@@ -12,10 +12,10 @@ namespace App\Helpers;
 class Campos
 {
     /**
-     * Retira a mascara de CPF
+     * Retira a mascara de CPF e de Telefone
      */
-    public function removeMascaraCPF($cpf){
-        return preg_replace("/\D+/", "", $cpf);
+    public function removeMascara($campo){
+        return preg_replace("/\D+/", "", $campo);
     }
 
 }

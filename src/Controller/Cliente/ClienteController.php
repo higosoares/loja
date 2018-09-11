@@ -75,7 +75,7 @@ class ClienteController extends AbstractController
     }
 
     /**
-     * @Route("/cliente/editar", methods={"POST"}, name="cliente_editar")
+     * @Route("/cliente/editar", methods={"POST", "PUT"}, name="cliente_editar")
      */
     public function editar(Request $request, EntityManagerInterface $entityManager)
     {
@@ -87,8 +87,8 @@ class ClienteController extends AbstractController
             $params->dta_nasc_cliente = $request->get('dta_nasc_cliente');
             $params->eml_cliente = $request->get('eml_cliente');
             $params->end_cliente = $request->get('end_cliente');
-            $params->tel_cliente = $request->get('tel_cliente');
-            $params->cpf_cliente = $this->campos->removeMascaraCPF($request->get('cpf_cliente'));
+            $params->tel_cliente = $this->campos->removeMascara($request->get('tel_cliente'));
+            $params->cpf_cliente = $this->campos->removeMascara($request->get('cpf_cliente'));
             $params->rg_cliente = $request->get('rg_cliente');
             $params->pwd_cliente = $request->get('pwd_cliente');
             $cliente = $this->clienteService->editar($request->get('id_cliente'), $params, $entityManager);
