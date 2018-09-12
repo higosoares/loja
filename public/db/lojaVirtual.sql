@@ -127,6 +127,7 @@ CREATE TABLE IF NOT EXISTS `lojaVirtual`.`produto` (
   `sts_inventario_produto` TINYINT NOT NULL,
   `vlr_peso_produto` DOUBLE NOT NULL,
   `cod_categoria_subCategoria` INT NOT NULL,
+  `tx_url_imagem_produto` VARCHAR(45) NULL,
   PRIMARY KEY (`id_produto`),
   INDEX `fk_produto_categoria_subCategoria1_idx` (`cod_categoria_subCategoria` ASC) ,
   CONSTRAINT `fk_produto_categoria_subCategoria1`
@@ -367,13 +368,13 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `lojaVirtual`;
-INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`) VALUES (1, 'Camisa Hering', 'bla bla', 150.00, true, 100, 1);
-INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`) VALUES (2, 'Tênis Nike Z-100', 'ble ble', 300.00, true, 200, 2);
-INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`) VALUES (3, 'Short Calvin Klein', 'bli bli', 250.00, true, 300, 3);
-INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`) VALUES (4, 'Calça Lacoste', 'blo blo', 199.99, true, 300, 4);
-INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`) VALUES (5, 'Cinto mary kay', 'blu blu', 150.99, true, 150, 5);
-INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`) VALUES (6, 'Sapato Dolce and Gabbana', 'blaa blaa', 179.99, true, 200, 6);
-INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`) VALUES (7, 'Vestido Gold ', 'blee blee', 350.99, true, 200, 7);
+INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`, `tx_url_imagem_produto`) VALUES (1, 'Camisa Hering', 'bla bla', 150.00, true, 100, 1, 'images/camiseta-basica-masculina-hering.jpg');
+INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`, `tx_url_imagem_produto`) VALUES (2, 'Tênis Nike Z-100', 'ble ble', 300.00, true, 200, 2, NULL);
+INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`, `tx_url_imagem_produto`) VALUES (3, 'Short Calvin Klein', 'bli bli', 250.00, true, 300, 3, NULL);
+INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`, `tx_url_imagem_produto`) VALUES (4, 'Calça Lacoste', 'blo blo', 199.99, true, 300, 4, NULL);
+INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`, `tx_url_imagem_produto`) VALUES (5, 'Cinto mary kay', 'blu blu', 150.99, true, 150, 5, NULL);
+INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`, `tx_url_imagem_produto`) VALUES (6, 'Sapato Dolce and Gabbana', 'blaa blaa', 179.99, true, 200, 6, NULL);
+INSERT INTO `lojaVirtual`.`produto` (`id_produto`, `nme_produto`, `dsc_produto`, `vlr_produto`, `sts_inventario_produto`, `vlr_peso_produto`, `cod_categoria_subCategoria`, `tx_url_imagem_produto`) VALUES (7, 'Vestido Gold ', 'blee blee', 350.99, true, 200, 7, NULL);
 
 COMMIT;
 

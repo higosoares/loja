@@ -41,7 +41,7 @@
                         <div class="col-md-3 product-grids">
                             <div class="agile-products">
                                 <div class="new-tag"><h6>Novo</h6></div>
-                                <a href="/produto/{{ prod.idProduto }}"><img src="{{ asset('images/e2.png') }}" class="img-responsive" alt="img"></a>
+                                <a href="/produto/{{ prod.idProduto }}"><img src="{{ asset(prod.txUrlImagemProduto) }}" class="img-responsive" alt="img"></a>
                                 <div class="agile-product-text">
                                     <h5><a href="/produto/{{ prod.idProduto }}">{{ prod.nmeProduto }}</a></h5>
                                     <h6><del>$700</del> R${{ prod.vlrProduto }}</h6>

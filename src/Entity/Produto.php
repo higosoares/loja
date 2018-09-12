@@ -66,6 +66,13 @@ class Produto
      */
     private $codCategoriaSubcategoria;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tx_url_imagem_produto", type="string", length=255, nullable=true)
+     */
+    private $txUrlImagemProduto;
+
 
 
     /**
@@ -220,6 +227,30 @@ class Produto
     public function getCodCategoriaSubcategoria()
     {
         return $this->codCategoriaSubcategoria;
+    }
+
+    /**
+     * Set txUrlImagemProduto
+     *
+     * @param string $txUrlImagemProduto
+     *
+     * @return Produto
+     */
+    public function setTxUrlImagemProduto($txUrlImagemProduto)
+    {
+        $this->txUrlImagemProduto = $txUrlImagemProduto;
+
+        return $this;
+    }
+
+    /**
+     * Get txUrlImagemProduto
+     *
+     * @return string
+     */
+    public function getTxUrlImagemProduto()
+    {
+        return $this->txUrlImagemProduto;
     }
 
 

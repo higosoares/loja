@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TipoPerfilRepository")
- * @ORM\Table(name="tipo_perfil", indexes={@ORM\Index(name="fk_perfil_tipo_perfil1_idx", columns={"cod_tipo_perfil"}), @ORM\Index(name="fk_perfil_cliente1_idx", columns={"cod_cliente"})})
+ * @ORM\Table(name="tipo_perfil")
  *
  */
 class TipoPerfil
