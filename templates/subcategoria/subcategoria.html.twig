@@ -41,7 +41,12 @@
                         <div class="col-md-3 product-grids">
                             <div class="agile-products">
                                 <div class="new-tag"><h6>Novo</h6></div>
-                                <a href="/produto/{{ prod.idProduto }}"><img src="{{ asset(prod.txUrlImagemProduto) }}" class="img-responsive" alt="img"></a>
+                                {% if prod.txUrlImagemProduto %}
+                                    {% set imagem = prod.txUrlImagemProduto|split(';') %}
+                                    <a href="/produto/{{ prod.idProduto }}"><img src="{{ asset(imagem[0]) }}" class="img-responsive" alt="img"></a>
+                                {% else %}
+                                    <a href="/produto/{{ prod.idProduto }}"><img src="{{ asset('images/e3.png') }}" class="img-responsive" alt="img"></a>
+                                {% endif %}
                                 <div class="agile-product-text">
                                     <h5><a href="/produto/{{ prod.idProduto }}">{{ prod.nmeProduto }}</a></h5>
                                     <h6><del>$700</del> R${{ prod.vlrProduto }}</h6>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\Perfil;
 
 use App\Entity\Perfil;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;

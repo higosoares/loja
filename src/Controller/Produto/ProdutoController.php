@@ -32,7 +32,12 @@ class ProdutoController extends AbstractController
     public function mostrarProduto($id)
     {
         $produto = $this->getDoctrine()->getRepository(Produto::class)->find($id);
-        return $this->render('produto/produto.html.twig', array('produto' => $produto));
+        $imagens = $produto->getTxUrlImagemProduto();
+        if ($imagens)
+        {
+            $imagens = explode(";", $imagens);
+        }
+        return $this->render('produto/produto.html.twig', array('produto' => $produto, 'imagens'=> $imagens));
 
     }
 

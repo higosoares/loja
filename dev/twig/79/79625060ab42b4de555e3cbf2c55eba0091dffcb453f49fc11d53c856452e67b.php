@@ -58,11 +58,11 @@ table th { background-color: #E0E0E0; font-weight: bold; text-align: left; }
 
 .status-success { background: rgba(94, 151, 110, 0.3); }
 .status-warning { background: rgba(240, 181, 24, 0.3); }
-.status-error { background: rgba(176, 65, 62, 0.2); }
-.status-success td, .status-warning td, .status-error td { background: transparent; }
-tr.status-error td, tr.status-warning td { border-bottom: 1px solid #FAFAFA; border-top: 1px solid #FAFAFA; }
+.status-bundles { background: rgba(176, 65, 62, 0.2); }
+.status-success td, .status-warning td, .status-bundles td { background: transparent; }
+tr.status-bundles td, tr.status-warning td { border-bottom: 1px solid #FAFAFA; border-top: 1px solid #FAFAFA; }
 .status-warning .colored { color: #A46A1F; }
-.status-error .colored  { color: #B0413E; }
+.status-bundles .colored  { color: #B0413E; }
 
 .sf-toggle { cursor: pointer; }
 .sf-toggle-content { -moz-transition: display .25s ease; -webkit-transition: display .25s ease; transition: display .25s ease; }
@@ -81,7 +81,7 @@ thead.sf-toggle-content.sf-toggle-visible, tbody.sf-toggle-content.sf-toggle-vis
 .tab-navigation li:hover .badge { background: #FAFAFA; color: #777; }
 .tab-navigation li.active .badge { background-color: #444; color: #FFF; }
 .tab-navigation li .badge.status-warning { background: #A46A1F; color: #FFF; }
-.tab-navigation li .badge.status-error { background: #B0413E; color: #FFF; }
+.tab-navigation li .badge.status-bundles { background: #B0413E; color: #FFF; }
 .tab-content > *:first-child { margin-top: 0; }
 
 .container { max-width: 1024px; margin: 0 auto; padding: 0 15px; }
@@ -208,11 +208,11 @@ table th { background-color: #E0E0E0; font-weight: bold; text-align: left; }
 
 .status-success { background: rgba(94, 151, 110, 0.3); }
 .status-warning { background: rgba(240, 181, 24, 0.3); }
-.status-error { background: rgba(176, 65, 62, 0.2); }
-.status-success td, .status-warning td, .status-error td { background: transparent; }
-tr.status-error td, tr.status-warning td { border-bottom: 1px solid #FAFAFA; border-top: 1px solid #FAFAFA; }
+.status-bundles { background: rgba(176, 65, 62, 0.2); }
+.status-success td, .status-warning td, .status-bundles td { background: transparent; }
+tr.status-bundles td, tr.status-warning td { border-bottom: 1px solid #FAFAFA; border-top: 1px solid #FAFAFA; }
 .status-warning .colored { color: #A46A1F; }
-.status-error .colored  { color: #B0413E; }
+.status-bundles .colored  { color: #B0413E; }
 
 .sf-toggle { cursor: pointer; }
 .sf-toggle-content { -moz-transition: display .25s ease; -webkit-transition: display .25s ease; transition: display .25s ease; }
@@ -231,7 +231,7 @@ thead.sf-toggle-content.sf-toggle-visible, tbody.sf-toggle-content.sf-toggle-vis
 .tab-navigation li:hover .badge { background: #FAFAFA; color: #777; }
 .tab-navigation li.active .badge { background-color: #444; color: #FFF; }
 .tab-navigation li .badge.status-warning { background: #A46A1F; color: #FFF; }
-.tab-navigation li .badge.status-error { background: #B0413E; color: #FFF; }
+.tab-navigation li .badge.status-bundles { background: #B0413E; color: #FFF; }
 .tab-content > *:first-child { margin-top: 0; }
 
 .container { max-width: 1024px; margin: 0 auto; padding: 0 15px; }

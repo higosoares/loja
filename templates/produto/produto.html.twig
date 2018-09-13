@@ -36,16 +36,21 @@
                     <div class="col-md-6 single-top-left">
                         <div class="flexslider">
                             <ul class="slides">
-                                <li data-thumb="{{ asset(produto.txUrlImagemProduto) }}">
-                                    <div class="thumb-image detail_images"><img src="{{ asset(produto.txUrlImagemProduto) }}"
+                                {% if imagens %}
+                                    {% for imagem in imagens %}
+                                <li data-thumb="{{ asset(imagem) }}">
+                                    <div class="thumb-image detail_images"><img src="{{ asset(imagem) }}"
                                                                                 data-imagezoom="true"
                                                                                 class="img-responsive" alt=""></div>
                                 </li>
-                                <li data-thumb="{{ asset(produto.txUrlImagemProduto) }}">
-                                    <div class="thumb-image detail_images"><img src="{{ asset(produto.txUrlImagemProduto) }}"
+                                {% endfor %}
+                                {% else %}
+                                <li data-thumb="{{ asset('images/s2.jpg') }}">
+                                    <div class="thumb-image detail_images"><img src="{{ asset('images/s2.jpg') }}"
                                                                                 data-imagezoom="true"
                                                                                 class="img-responsive" alt=""></div>
                                 </li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
@@ -74,19 +79,22 @@
                                 <li><a href="#"><i class="fa fa-gift" aria-hidden="true"></i> Coupon</a></li>
                             </ul>
                         </div>
-                        <p class="single-price-text">{{ produto.dscProduto }}</p>
+                        <p class="single-price-text"></p>
                         <form action="#" method="post">
                             <input type="hidden" name="cmd" value="_cart"/>
                             <input type="hidden" name="add" value="1"/>
                             <input type="hidden" name="w3ls_item" value="Snow Blower"/>
                             <input type="hidden" name="amount" value="540.00"/>
-                            <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                Adicionar ao carrinho
-                            </button>
+                            {% if produto.stsInventarioProduto == 1 %}
+                                <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                    Adicionar ao carrinho
+                                </button>
+                            {% else %}
+                                <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                    Não possui estoque
+                                </button>
+                            {% endif %}
                         </form>
-                        <button class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i>
-                            Adicionar a lista de desejos
-                        </button>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -298,13 +306,7 @@
                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
                              aria-labelledby="headingOne">
                             <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-                                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-                                nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                {{ produto.dscProduto }}
                             </div>
                         </div>
                     </div>
@@ -406,10 +408,5 @@
         </div>
     </div>
     <!--//products-->
-
-
-
-
-
 
 {% endblock %}

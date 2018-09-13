@@ -2,10 +2,12 @@ var cliente = {
 
     cadastrar: function(url, params) {
         //$('#loader-geral').css('display','block');
+        $('.alert').hide();
         $.post(url, params, function(retorno) {
         }).done(function (retorno) {
             $('.alert-success').text('Cadastro efetuado com sucesso');
             $('.alert-success').show();
+            window.location.href = "/login";
         }).fail(function(response) {
             //$('#loader-geral').css('display','none');
             $('.alert-danger').text('Erro ao cadastrar');
@@ -17,6 +19,7 @@ var cliente = {
 
     editar: function(url, params) {
         //$('#loader-geral').css('display','block');
+        $('.alert').hide();
         $.ajax({
             url:url,
             type: 'PUT',

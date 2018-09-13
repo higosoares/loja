@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\TipoPerfil;
 
 use App\Entity\TipoPerfil;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;

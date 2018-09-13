@@ -44,12 +44,14 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/teste", name="teste")
      */
-    public function mostraAdmin()
+    public function teste()
     {
-        return $this->render('admin/admin.html.twig', [
+        return $this->render('bundles/TwigBundle/Exception/error403.html.twig', [
+
         ]);
 
     }
+
 }

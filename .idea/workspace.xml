@@ -1,7 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f6c5cc07-baf8-43e4-abf2-62b7383ea9b2" name="Default Changelist" comment="" />
+    <list default="true" id="f6c5cc07-baf8-43e4-abf2-62b7383ea9b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/css/404.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error.json.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.json.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.json.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/twig/21/21fb295dc6f587d8341dc1c731be7fbb64dcd5d3f8ffc3cbdb683c340a6cf6dc.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/twig/21/21fb295dc6f587d8341dc1c731be7fbb64dcd5d3f8ffc3cbdb683c340a6cf6dc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/twig/31/3148419327322be0f5cf55b76083f6c5843da28e3da6820d54727bfed08cd0e9.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/twig/31/3148419327322be0f5cf55b76083f6c5843da28e3da6820d54727bfed08cd0e9.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/twig/50/500a9ac730acf2824b56c8c576ae2eba7d27e561c7118fbbe28a4e5efd51926a.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/twig/50/500a9ac730acf2824b56c8c576ae2eba7d27e561c7118fbbe28a4e5efd51926a.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/twig/50/507036dffb71ffec26d474b285d18140cd5707fd551f4a460718e10d6e0b7562.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/twig/50/507036dffb71ffec26d474b285d18140cd5707fd551f4a460718e10d6e0b7562.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/twig/62/625df0c41792dd381eb0856531eda980ea43a008696606a4f08638d4db09e76a.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/twig/62/625df0c41792dd381eb0856531eda980ea43a008696606a4f08638d4db09e76a.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/twig/71/71cfbdfd778951f0371f5110f678d76b83ceecf10ffd546f5e03ee3c24e5a641.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/twig/71/71cfbdfd778951f0371f5110f678d76b83ceecf10ffd546f5e03ee3c24e5a641.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/twig/79/79625060ab42b4de555e3cbf2c55eba0091dffcb453f49fc11d53c856452e67b.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/twig/79/79625060ab42b4de555e3cbf2c55eba0091dffcb453f49fc11d53c856452e67b.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/twig/7a/7a9f03a85e1d44d817ce6eb2556b0caa6a1a86c3a52d11c4209e14b71fa0beb9.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/twig/7a/7a9f03a85e1d44d817ce6eb2556b0caa6a1a86c3a52d11c4209e14b71fa0beb9.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/twig/85/85f38dad888db1caa7819f054f81282e4b81ed18a78599fbab2159c5ef66e297.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/twig/85/85f38dad888db1caa7819f054f81282e4b81ed18a78599fbab2159c5ef66e297.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/twig/92/92edaddf166294345979c1458e8507cd8b4fde682c47617391c6246f2fb3babb.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/twig/92/92edaddf166294345979c1458e8507cd8b4fde682c47617391c6246f2fb3babb.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/twig/a9/a9db2b556666a77500c1f67a3737f50cb3d6ae71f07c901dd4744023fc437c9c.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/twig/a9/a9db2b556666a77500c1f67a3737f50cb3d6ae71f07c901dd4744023fc437c9c.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/twig/c8/c80c8c8f9335bfb0e638126df049aee4b95c05f835668d9d57d5479fa37f16af.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/twig/c8/c80c8c8f9335bfb0e638126df049aee4b95c05f835668d9d57d5479fa37f16af.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/twig/d7/d76710416754ce55dbfeef96625221e54d93fb9ca2846316767504679e604b62.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/twig/d7/d76710416754ce55dbfeef96625221e54d93fb9ca2846316767504679e604b62.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cliente/cadastro.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cliente/cadastrar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/cliente/cliente.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cliente/cliente.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Carrinho/CarrinhoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Carrinho/CarrinhoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Carrinho/Produto/CarrinhoProdutoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Carrinho/Produto/CarrinhoProdutoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Categoria/CategoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Categoria/CategoriaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Categoria/Subcategoria/CategoriaSubcategoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Categoria/Subcategoria/CategoriaSubcategoriaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Cliente/ClienteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Cliente/ClienteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Home/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Home/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Perfil/PerfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Perfil/PerfilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PerfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PerfilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Produto/ProdutoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Produto/ProdutoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TipoPerfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TipoPerfil/TipoPerfilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Cliente.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Cliente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20180912195025.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20180912195025.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ClienteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Cliente/ClienteRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PerfilRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Perfil/PerfilRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TipoPerfilRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TipoPerfil/TipoPerfilRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ClienteService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ClienteService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cliente/cadastrar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cliente/admin_cadastrar.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cliente/cadastro.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cliente/cadastro.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cliente/detalhes.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cliente/admin_detalhes.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cliente/editar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cliente/admin_editar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cliente/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cliente/admin_index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cliente/perfil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cliente/perfil.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/produto/produto.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/produto/produto.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/subcategoria/subcategoria.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/subcategoria/subcategoria.html.twig" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,56 +121,60 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="39" />
+          <entry key="css" value="86" />
           <entry key="dummy" value="1" />
-          <entry key="js" value="573" />
+          <entry key="env" value="21" />
+          <entry key="js" value="611" />
           <entry key="meta" value="2" />
-          <entry key="php" value="3918" />
-          <entry key="twig" value="1976" />
-          <entry key="yaml" value="120" />
+          <entry key="php" value="4728" />
+          <entry key="twig" value="2572" />
+          <entry key="yaml" value="130" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="39" />
-          <entry key="JavaScript" value="575" />
-          <entry key="PHP" value="3913" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="CSS" value="86" />
+          <entry key="JavaScript" value="613" />
+          <entry key="PHP" value="4723" />
+          <entry key="PLAIN_TEXT" value="24" />
           <entry key="SQL" value="5" />
-          <entry key="Twig" value="1974" />
-          <entry key="YAML" value="120" />
+          <entry key="Twig" value="2570" />
+          <entry key="YAML" value="130" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="2" />
-          <entry key="dist" value="1" />
+          <entry key="css" value="4" />
+          <entry key="dist" value="2" />
+          <entry key="env" value="2" />
           <entry key="gitignore" value="2" />
-          <entry key="js" value="10" />
+          <entry key="js" value="15" />
           <entry key="json" value="1" />
-          <entry key="log" value="1" />
+          <entry key="log" value="8" />
           <entry key="meta" value="3" />
-          <entry key="php" value="116" />
-          <entry key="twig" value="66" />
+          <entry key="php" value="147" />
+          <entry key="scss" value="1" />
+          <entry key="twig" value="87" />
           <entry key="xml" value="1" />
-          <entry key="yaml" value="10" />
+          <entry key="yaml" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="2" />
+          <entry key="CSS" value="4" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="10" />
-          <entry key="PHP" value="116" />
-          <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Twig" value="66" />
+          <entry key="JavaScript" value="15" />
+          <entry key="PHP" value="147" />
+          <entry key="PLAIN_TEXT" value="17" />
+          <entry key="SCSS" value="1" />
+          <entry key="Twig" value="87" />
           <entry key="XML" value="1" />
-          <entry key="YAML" value="10" />
+          <entry key="YAML" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
         <counts>
-          <entry key="PHP Class.type" value="6" />
+          <entry key="PHP Class.type" value="7" />
         </counts>
       </usages-collector>
     </session>
@@ -127,89 +182,85 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/cliente/perfil.html.twig">
+        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="21" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="21" />
+            <state relative-caret-position="198">
+              <caret line="115" column="53" selection-start-line="115" selection-start-column="45" selection-end-line="115" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Produto.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Admin/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="71" column="90" selection-start-line="71" selection-start-column="90" selection-end-line="71" selection-end-column="90" />
+            <state relative-caret-position="230">
+              <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+              <folding>
+                <element signature="e#122#146#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/TipoPerfil.php">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Cliente.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+            <state relative-caret-position="8145">
+              <caret line="366" column="27" selection-start-line="366" selection-start-column="19" selection-end-line="366" selection-end-column="27" />
+              <folding>
+                <element signature="e#30#62#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Perfil.php">
+        <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="181" selection-start-line="8" selection-start-column="181" selection-end-line="8" selection-end-column="181" />
+            <state relative-caret-position="-92">
+              <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180912191034.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Home/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="95" />
+            <state relative-caret-position="470">
+              <caret line="50" column="67" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
+              <folding>
+                <element signature="e#39#64#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="25" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180912195025.php">
+        <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="161">
+              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180818182507.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Login/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/CarrinhoProduto.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="805">
-              <caret line="62" column="55" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Produto/ProdutoController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-138" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/produto/produto.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+            <state relative-caret-position="2">
+              <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+              <folding>
+                <element signature="e#40#105#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -220,23 +271,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dt</find>
-      <find>perfil</find>
-      <find>menu</find>
-      <find>ManytoOne</find>
-      <find>App\Controller\Categoria\SubCategoria\CategoriaSubcategoriaController</find>
-      <find>Subcategoria</find>
-      <find>App\Entity\SubCategoria</find>
-      <find>SubCategoria</find>
-      <find>header</find>
       <find>categoria</find>
-      <find>/registro</find>
-      <find>input</find>
       <find>login</find>
       <find>CategoriaSubcategoria:class</find>
       <find>clientes</find>
@@ -255,6 +296,17 @@
       <find>/perfil</find>
       <find>custom</find>
       <find>registro</find>
+      <find>produto.</find>
+      <find>stsInven</find>
+      <find>Lista de de</find>
+      <find>/registro</find>
+      <find>input</find>
+      <find>pwd</find>
+      <find>error.json.twig</find>
+      <find>admin_index</find>
+      <find>admin_cadastrar</find>
+      <find>nomeCliente</find>
+      <find>username</find>
     </findStrings>
     <replaceStrings>
       <replace>Subcategoria</replace>
@@ -279,32 +331,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/cliente/detalhes.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Categoria/CategoriaController.php" />
-        <option value="$PROJECT_DIR$/templates/carrinho/detalhes.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Carrinho/Produto/CarrinhoProdutoController.php" />
-        <option value="$PROJECT_DIR$/templates/carrinho/produto/detalhes.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Carrinho/CarrinhoController.php" />
-        <option value="$PROJECT_DIR$/templates/subcategoria/detalhes.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Subcategoria/SubcategoriaController.php" />
-        <option value="$PROJECT_DIR$/templates/produto/index.html.twig" />
-        <option value="$PROJECT_DIR$/templates/produto/detalhes.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Produto/ProdutoController.php" />
-        <option value="$PROJECT_DIR$/templates/item/detalhes.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Item/ItemController.php" />
-        <option value="$PROJECT_DIR$/templates/formapagamento/detalhes.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Formapagamento/FormapagamentoController.php" />
-        <option value="$PROJECT_DIR$/templates/entrega/detalhes.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Compra/CompraController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Entrega/EntregaController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Produto/Item/ProdutoItemController.php" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/src/Controller/Login/LoginController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Perfil/PerfilController.php" />
-        <option value="$PROJECT_DIR$/src/Exception/LojaExcetion.php" />
         <option value="$PROJECT_DIR$/templates/login/login.html.twig" />
         <option value="$PROJECT_DIR$/src/Repository/ClienteRepository.php" />
-        <option value="$PROJECT_DIR$/src/Service/ClienteService.php" />
         <option value="$PROJECT_DIR$/public/js/masks.js" />
         <option value="$PROJECT_DIR$/public/js/mensagens.js" />
         <option value="$PROJECT_DIR$/public/js/mensagens/mensagens.js" />
@@ -313,23 +341,47 @@
         <option value="$PROJECT_DIR$/public/js/cliente/index.js" />
         <option value="$PROJECT_DIR$/public/js/base/scripts.js" />
         <option value="$PROJECT_DIR$/templates/index.html.twig" />
-        <option value="$PROJECT_DIR$/templates/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Cliente/ClienteController.php" />
         <option value="$PROJECT_DIR$/public/js/cliente/editar.js" />
-        <option value="$PROJECT_DIR$/templates/cliente/perfil.html.twig" />
-        <option value="$PROJECT_DIR$/public/js/cliente/cliente.js" />
-        <option value="$PROJECT_DIR$/src/Controller/Home/DefaultController.php" />
-        <option value="$PROJECT_DIR$/config/packages/security.yaml" />
         <option value="$PROJECT_DIR$/src/Security/AccessDeniedHandler.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Cliente.php" />
         <option value="$PROJECT_DIR$/src/Entity/Produto.php" />
-        <option value="$PROJECT_DIR$/templates/subcategoria/subcategoria.html.twig" />
-        <option value="$PROJECT_DIR$/templates/produto/produto.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/TipoPerfil.php" />
         <option value="$PROJECT_DIR$/src/Entity/Perfil.php" />
         <option value="$PROJECT_DIR$/src/Migrations/Version20180912191034.php" />
         <option value="$PROJECT_DIR$/src/Migrations/Version20180818182507.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Produto/ProdutoController.php" />
         <option value="$PROJECT_DIR$/src/Migrations/Version20180912195025.php" />
+        <option value="$PROJECT_DIR$/templates/produto/produto.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/Subcategoria/SubcategoriaController.php" />
+        <option value="$PROJECT_DIR$/templates/subcategoria/subcategoria.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/Perfil/PerfilController.php" />
+        <option value="$PROJECT_DIR$/src/Repository/Perfil/PerfilRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/TipoPerfil/TipoPerfilRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/Cliente/ClienteRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/TipoPerfil/TipoPerfilController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/PerfilController.php" />
+        <option value="$PROJECT_DIR$/src/Service/ClienteService.php" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/public/js/cliente/cadastrar.js" />
+        <option value="$PROJECT_DIR$/templates/cliente/cadastro.html.twig" />
+        <option value="$PROJECT_DIR$/templates/cliente/perfil.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/Cliente/ClienteController.php" />
+        <option value="$PROJECT_DIR$/public/js/cliente/cliente.js" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/src/Controller/Carrinho/CarrinhoController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Carrinho/Produto/CarrinhoProdutoController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Categoria/CategoriaController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Categoria/Subcategoria/CategoriaSubcategoriaController.php" />
+        <option value="$PROJECT_DIR$/templates/cliente/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/error/404.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/Admin/AdminController.php" />
+        <option value="$PROJECT_DIR$/public/css/404.css" />
+        <option value="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/404.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/Home/DefaultController.php" />
+        <option value="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" />
+        <option value="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/src/Entity/Cliente.php" />
+        <option value="$PROJECT_DIR$/config/packages/security.yaml" />
       </list>
     </option>
   </component>
@@ -464,7 +516,37 @@
             <path>
               <item name="loja" type="b2602c69:ProjectViewProjectNode" />
               <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="cliente" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="loja" type="b2602c69:ProjectViewProjectNode" />
@@ -489,6 +571,20 @@
               <item name="loja" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
+              <item name="Home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
               <item name="Perfil" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -496,14 +592,7 @@
               <item name="loja" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="Produto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loja" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="Subcategoria" type="462c0819:PsiDirectoryNode" />
+              <item name="TipoPerfil" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="loja" type="b2602c69:ProjectViewProjectNode" />
@@ -515,18 +604,60 @@
               <item name="loja" type="b2602c69:ProjectViewProjectNode" />
               <item name="loja" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="loja" type="b2602c69:ProjectViewProjectNode" />
               <item name="loja" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="Cliente" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="Perfil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="TipoPerfil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="loja" type="b2602c69:ProjectViewProjectNode" />
               <item name="loja" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="bundles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="bundles" type="462c0819:PsiDirectoryNode" />
+              <item name="TwigBundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="bundles" type="462c0819:PsiDirectoryNode" />
+              <item name="TwigBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Exception" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="loja" type="b2602c69:ProjectViewProjectNode" />
@@ -538,13 +669,18 @@
               <item name="loja" type="b2602c69:ProjectViewProjectNode" />
               <item name="loja" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="produto" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="loja" type="b2602c69:ProjectViewProjectNode" />
               <item name="loja" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="subcategoria" type="462c0819:PsiDirectoryNode" />
+              <item name="var" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loja" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loja" type="462c0819:PsiDirectoryNode" />
+              <item name="var" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -556,16 +692,17 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Laravel/secretariavirtual" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Higo\Desenvolvimento\Web\PHP\Symphony\loja\src\Controller\Categoria\SubCategoria" />
-      <recent name="C:\Higo\Desenvolvimento\Web\PHP\Symphony\loja\src\Controller\Formapagamento" />
-      <recent name="C:\Higo\Desenvolvimento\Web\PHP\Symphony\loja\src\Controller\Home" />
-      <recent name="C:\Higo\Desenvolvimento\Web\PHP\Symphony\loja\src\Controller\Compra" />
-      <recent name="C:\Higo\Desenvolvimento\Web\PHP\Symphony\loja\src\Controller\Entrega" />
+      <recent name="C:\Higo\Desenvolvimento\Web\PHP\Symphony\loja\templates\bundles\TwigBundle\Exception" />
+      <recent name="C:\Higo\Desenvolvimento\Web\PHP\Symphony\loja\src\Repository\TipoPerfil" />
+      <recent name="C:\Higo\Desenvolvimento\Web\PHP\Symphony\loja\src\Repository\Perfil" />
+      <recent name="C:\Higo\Desenvolvimento\Web\PHP\Symphony\loja\src\Repository\Cliente" />
+      <recent name="C:\Higo\Desenvolvimento\Web\PHP\Symphony\loja\src\Controller\TipoPerfil" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -602,12 +739,12 @@
       <workItem from="1536174651093" duration="16558000" />
       <workItem from="1536604018029" duration="19299000" />
       <workItem from="1536697124819" duration="10058000" />
-      <workItem from="1536776072937" duration="6175000" />
+      <workItem from="1536776072937" duration="22659000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89767000" />
+    <option name="totallyTimeSpent" value="106251000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -622,7 +759,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2904953" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2904953" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -635,7 +772,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32962447" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32962447" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32962447" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -650,303 +787,17 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/entrega/detalhes.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180818182507.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+        <state relative-caret-position="180">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/entrega/editar.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Compra/CompraController.php">
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180912191034.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Entrega/EntregaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Produto/Item/ProdutoItemController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Carrinho/Produto/CarrinhoProdutoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="67" column="45" lean-forward="true" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/framework.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="65" lean-forward="true" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90413">
-          <caret line="3931" column="17" selection-start-line="3931" selection-start-column="17" selection-end-line="3931" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/LojaExcetion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ClienteRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="e#114#137#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/PerfilRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="9" selection-start-line="21" selection-start-column="6" selection-end-line="23" selection-end-column="9" />
-          <folding>
-            <element signature="e#34#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/ClienteService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/mensagens.js" />
-    <entry file="file://$PROJECT_DIR$/src/Helpers/Campos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="49" lean-forward="true" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/cliente/cadastro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/cliente/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/entrega/cadastrar.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5681">
-          <caret line="247" selection-start-line="247" selection-end-line="261" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/perfil/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cliente/editar.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-89" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/cliente/editar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/TipoPerfilController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1587" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/base/scripts.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/mensagens/mensagens.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="76" column="9" lean-forward="true" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/cliente/cliente.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Home/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Login/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="29" column="67" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/masks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/PerfilType.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/PerfilController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Perfil/PerfilController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="84" selection-start-line="24" selection-start-column="84" selection-end-line="24" selection-end-column="84" />
-          <folding>
-            <element signature="e#123#188#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Security/AccessDeniedHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-          <folding>
-            <element signature="e#113#158#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Cliente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="85" column="23" lean-forward="true" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
-          <folding>
-            <element signature="e#30#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Cliente/ClienteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="119" column="30" selection-start-line="119" selection-start-column="19" selection-end-line="119" selection-end-column="30" />
-          <folding>
-            <element signature="e#42#73#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Subcategoria/SubcategoriaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="29" column="55" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3888">
-          <caret line="196" selection-start-line="196" selection-end-line="208" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/subcategoria/subcategoria.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cliente/perfil.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Produto/ProdutoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/produto/produto.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Produto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="71" column="90" selection-start-line="71" selection-start-column="90" selection-end-line="71" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/TipoPerfil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        <state relative-caret-position="46">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="95" />
         </state>
       </provider>
     </entry>
@@ -964,24 +815,328 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180818182507.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180912191034.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180912195025.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="15" column="123" selection-start-line="15" selection-start-column="123" selection-end-line="15" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Produto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="150" column="19" selection-start-line="150" selection-start-column="11" selection-end-line="150" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Subcategoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Produto/ProdutoController.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <caret line="34" selection-start-line="34" selection-end-line="38" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/produto/produto.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-118">
+          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="39" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Subcategoria/SubcategoriaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/subcategoria/subcategoria.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="45" column="101" selection-start-line="45" selection-start-column="101" selection-end-line="45" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Security/AccessDeniedHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+          <folding>
+            <element signature="e#113#158#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/Perfil/PerfilRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+          <folding>
+            <element signature="e#34#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/TipoPerfil/TipoPerfilRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="36" lean-forward="true" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Perfil/PerfilController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#123#188#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/TipoPerfil/TipoPerfilController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" selection-start-line="12" selection-end-line="14" selection-end-column="3" />
+          <folding>
+            <element signature="e#45#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/PerfilController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/cliente/editar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/cliente/cadastrar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="1494" column="16" selection-start-line="1494" selection-start-column="16" selection-end-line="1494" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cliente/cadastro.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="38" column="74" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/cliente/cliente.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Carrinho/CarrinhoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Carrinho/Produto/CarrinhoProdutoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Categoria/CategoriaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Categoria/Subcategoria/CategoriaSubcategoriaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/ClienteService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <folding>
+            <element signature="e#112#135#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Cliente/ClienteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="68" column="53" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+          <folding>
+            <element signature="e#42#73#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cliente/admin_index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/translation.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cliente/perfil.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cliente/admin_cadastrar.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/404.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Home/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="50" column="67" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
+          <folding>
+            <element signature="e#39#64#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.json.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error.json.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/dev/routing.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="25" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.json.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+          <folding>
+            <element signature="e#122#146#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env.dist">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="34" selection-start-line="34" selection-end-line="46" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="115" column="53" selection-start-line="115" selection-start-column="45" selection-end-line="115" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Login/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+          <folding>
+            <element signature="e#40#105#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/Cliente/ClienteRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Cliente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8145">
+          <caret line="366" column="27" selection-start-line="366" selection-start-column="19" selection-end-line="366" selection-end-column="27" />
+          <folding>
+            <element signature="e#30#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/var/log/prod.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/var/log/dev.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
         </state>
       </provider>
     </entry>

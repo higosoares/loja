@@ -9,7 +9,7 @@
 namespace App\Service;
 
 use App\Entity\Cliente;
-use App\Repository\ClienteRepository;
+use App\Repository\Cliente\ClienteRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
 class ClienteService

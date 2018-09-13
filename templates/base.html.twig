@@ -126,7 +126,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                             Conta<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/login">Login </a></li>
-                            <li><a href="/registro">Registro</a></li>
+                            <li><a href="/cliente/cadastro">Registro</a></li>
                         </ul>
                     </li>
                 {% endif %}
@@ -200,7 +200,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <div class="alert alert-success">{{ flash_message }}</div>
             {% endfor %}
 
-            {% for flash_message in app.session.flashbag.get('error') %}
+            {% for flash_message in app.session.flashbag.get('bundles') %}
                 <div class="alert alert-danger">{{ flash_message }}</div>
             {% endfor %}
 

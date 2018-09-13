@@ -30,7 +30,7 @@ class __TwigTemplate_a6c5a7564f4b625c19c520fd0275e1f3c07ce0e931b2e1d6533c76d9e48
         echo twig_escape_filter($this->env, $this->env->getCharset(), "html", null, true);
         echo "\" ?>
 
-<error code=\"";
+<bundles code=\"";
         // line 3
         echo twig_escape_filter($this->env, (isset($context["status_code"]) || array_key_exists("status_code", $context) ? $context["status_code"] : (function () { throw new Twig_Error_Runtime('Variable "status_code" does not exist.', 3, $this->source); })()), "html", null, true);
         echo "\" message=\"";
@@ -58,7 +58,7 @@ class __TwigTemplate_a6c5a7564f4b625c19c520fd0275e1f3c07ce0e931b2e1d6533c76d9e48
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['e'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 9
-        echo "</error>
+        echo "</bundles>
 ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -87,13 +87,13 @@ class __TwigTemplate_a6c5a7564f4b625c19c520fd0275e1f3c07ce0e931b2e1d6533c76d9e48
     {
         return new Twig_Source("<?xml version=\"1.0\" encoding=\"{{ _charset }}\" ?>
 
-<error code=\"{{ status_code }}\" message=\"{{ status_text }}\">
+<bundles code=\"{{ status_code }}\" message=\"{{ status_text }}\">
 {% for e in exception.toarray %}
     <exception class=\"{{ e.class }}\" message=\"{{ e.message }}\">
 {{ include('@Twig/Exception/traces.xml.twig', { exception: e }, with_context = false) }}
     </exception>
 {% endfor %}
-</error>
+</bundles>
 ", "@Twig/Exception/exception.xml.twig", "C:\\Higo\\Desenvolvimento\\Web\\PHP\\Symphony\\my-project\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\exception.xml.twig");
     }
 }

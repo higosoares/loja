@@ -1489,7 +1489,7 @@ input#amount {
 .login-top  h4  a:hover{
     color: #353f49;
 }
-.login-page input[type="text"], .login-page input[type="password"], .login-page input[type="email"] {
+.login-page input[type="text"], .login-page input[type="password"], .login-page input[type="email"], .login-page input[type="date"] {
     font-size: 1em;
     padding: 0.9em 1em;
     width: 100%;

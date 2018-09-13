@@ -28,7 +28,7 @@
 		<tr>
 		{% for cliente in clientes %}
 			<th scope="row">{{ cliente.idcliente }}</th>
-			<td>{{ cliente.nomeCliente }}</td>
+			<td>{{ cliente.userName }}</td>
 			<td>{{ cliente.nmeSobrenomeCliente }}</td>
 			<td>{{ cliente.endCliente }}</td>
 			<td>{{ cliente.dtaNascCliente }}</td>
@@ -36,7 +36,7 @@
 			<td>{{ cliente.telCliente }}</td>
 			<td>{{ cliente.cpfCliente }}</td>
 			<td>{{ cliente.rgCliente }}</td>
-			<td>{{ cliente.pwdCliente }}</td>
+			<td>{{ cliente.password }}</td>
 			<td><a href="/admin/cliente/detalhes/{{ cliente.idcliente }}" class="btn btn-success">Ver</a>
 			<a href="/admin/cliente/editar/{{ cliente.idcliente }}" class="btn btn-default">Editar</a>
 			<a href="/admin/cliente/deletar/{{ cliente.idcliente }}" class="btn btn-danger">Deletar</a>

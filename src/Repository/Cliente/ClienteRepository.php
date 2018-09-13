@@ -6,7 +6,7 @@
  * Time: 20:49
  */
 
-namespace App\Repository;
+namespace App\Repository\Cliente;
 use App\Entity\Cliente;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;

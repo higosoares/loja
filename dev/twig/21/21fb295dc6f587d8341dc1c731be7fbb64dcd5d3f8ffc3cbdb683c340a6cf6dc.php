@@ -1511,10 +1511,10 @@ $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBl
             // line 369
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["errors"]) || array_key_exists("errors", $context) ? $context["errors"] : (function () { throw new Twig_Error_Runtime('Variable "errors" does not exist.', 369, $this->source); })()));
-            foreach ($context['_seq'] as $context["_key"] => $context["error"]) {
+            foreach ($context['_seq'] as $context["_key"] => $context["bundles"]) {
                 // line 370
                 echo "<li>";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["error"], "message", array()), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["bundles"], "message", array()), "html", null, true);
                 echo "</li>";
             }
             $_parent = $context['_parent'];
@@ -2125,8 +2125,8 @@ $context["attrvalue"] === false)) {
 {%- block form_errors -%}
     {%- if errors|length > 0 -%}
     <ul>
-        {%- for error in errors -%}
-            <li>{{ error.message }}</li>
+        {%- for bundles in errors -%}
+            <li>{{ bundles.message }}</li>
         {%- endfor -%}
     </ul>
     {%- endif -%}

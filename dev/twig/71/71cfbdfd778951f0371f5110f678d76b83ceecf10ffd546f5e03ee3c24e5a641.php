@@ -230,7 +230,7 @@ class __TwigTemplate_116eefb72d19bc6ba576c10b5122281eeae060868bd9adfcf4639199399
             $context["status_code"] = ((twig_in_filter("request", twig_get_array_keys_filter(twig_get_attribute($this->env, $this->source, (isset($context["profile"]) || array_key_exists("profile", $context) ? $context["profile"] : (function () { throw new Twig_Error_Runtime('Variable "profile" does not exist.', 9, $this->source); })()), "collectors", array())))) ? (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "getcollector", array(0 => "request"), "method", false, true), "statuscode", array(), "any", true, true)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["profile"] ?? null), "getcollector", array(0 => "request"), "method", false, true), "statuscode", array()), 0)) : (0))) : (0));
             // line 10
             echo "                ";
-            $context["css_class"] = ((((isset($context["status_code"]) || array_key_exists("status_code", $context) ? $context["status_code"] : (function () { throw new Twig_Error_Runtime('Variable "status_code" does not exist.', 10, $this->source); })()) > 399)) ? ("status-error") : (((((isset($context["status_code"]) || array_key_exists("status_code", $context) ? $context["status_code"] : (function () { throw new Twig_Error_Runtime('Variable "status_code" does not exist.', 10, $this->source); })()) > 299)) ? ("status-warning") : ("status-success"))));
+            $context["css_class"] = ((((isset($context["status_code"]) || array_key_exists("status_code", $context) ? $context["status_code"] : (function () { throw new Twig_Error_Runtime('Variable "status_code" does not exist.', 10, $this->source); })()) > 399)) ? ("status-bundles") : (((((isset($context["status_code"]) || array_key_exists("status_code", $context) ? $context["status_code"] : (function () { throw new Twig_Error_Runtime('Variable "status_code" does not exist.', 10, $this->source); })()) > 299)) ? ("status-warning") : ("status-success"))));
             // line 11
             echo "
                 <div class=\"status ";
@@ -462,7 +462,7 @@ class __TwigTemplate_116eefb72d19bc6ba576c10b5122281eeae060868bd9adfcf4639199399
         {% block summary %}
             {% if profile is defined %}
                 {% set status_code = ('request' in profile.collectors|keys) ? profile.getcollector('request').statuscode|default(0) : 0 %}
-                {% set css_class = status_code > 399 ? 'status-error' : status_code > 299 ? 'status-warning' : 'status-success' %}
+                {% set css_class = status_code > 399 ? 'status-bundles' : status_code > 299 ? 'status-warning' : 'status-success' %}
 
                 <div class=\"status {{ css_class }}\">
                     <div class=\"container\">

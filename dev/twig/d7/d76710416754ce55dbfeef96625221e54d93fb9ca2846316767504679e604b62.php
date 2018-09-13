@@ -1,6 +1,6 @@
 <?php
 
-/* @Twig/Exception/error.txt.twig */
+/* @Twig/Exception/bundles.txt.twig */
 class __TwigTemplate_11071abf456c1c8214f2b97b965991d4d81e597a96beff1769172018923407c5 extends Twig_Template
 {
     private $source;
@@ -20,10 +20,10 @@ class __TwigTemplate_11071abf456c1c8214f2b97b965991d4d81e597a96beff1769172018923
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/Exception/error.txt.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/Exception/bundles.txt.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/Exception/error.txt.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/Exception/bundles.txt.twig"));
 
         // line 1
         echo "Oops! An Error Occurred
@@ -36,7 +36,7 @@ The server returned a \"";
         echo (isset($context["status_text"]) || array_key_exists("status_text", $context) ? $context["status_text"] : (function () { throw new Twig_Error_Runtime('Variable "status_text" does not exist.', 4, $this->source); })());
         echo "\".
 
-Something is broken. Please let us know what you were doing when this error occurred.
+Something is broken. Please let us know what you were doing when this bundles occurred.
 We will fix it as soon as possible. Sorry for any inconvenience caused.
 ";
         
@@ -49,7 +49,7 @@ We will fix it as soon as possible. Sorry for any inconvenience caused.
 
     public function getTemplateName()
     {
-        return "@Twig/Exception/error.txt.twig";
+        return "@Twig/Exception/bundles.txt.twig";
     }
 
     public function isTraitable()
@@ -69,8 +69,8 @@ We will fix it as soon as possible. Sorry for any inconvenience caused.
 
 The server returned a \"{{ status_code }} {{ status_text }}\".
 
-Something is broken. Please let us know what you were doing when this error occurred.
+Something is broken. Please let us know what you were doing when this bundles occurred.
 We will fix it as soon as possible. Sorry for any inconvenience caused.
-", "@Twig/Exception/error.txt.twig", "C:\\Higo\\Desenvolvimento\\Web\\PHP\\Symphony\\my-project\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\error.txt.twig");
+", "@Twig/Exception/bundles.txt.twig", "C:\\Higo\\Desenvolvimento\\Web\\PHP\\Symphony\\my-project\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\bundles.txt.twig");
     }
 }

@@ -1,26 +1,60 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/masks.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/cliente/cadastrar.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/cliente/cliente.js') }}"></script>
+{% endblock %}
 {% block body %}
-<div class="login-page">
-		<div class="container">
-			<h3 class="w3ls-title w3ls-title1">Cria sua conta</h3>
-			<div class="login-body">
-      {{ form_start(form) }}
-      {{ form_widget(form) }}
-      {{ form_end(form) }}
+    <div class="login-page">
+        <div class="container">
+            <h3 class="w3ls-title w3ls-title1">Registe sua conta</h3>
+            <div class="login-body">
+                <form action="/cliente/cadastrar" method="post" id="form_cliente_cadastrar">
+                    <label for="username">Nome*</label>
+                    <input id="nome_cliente" name="nome_cliente" required="required" type="text">
 
-					<div class="forgot-grid">
-						<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Me lembre</label>
-						<div class="forgot">
-							<a href="#">Esqueceu a senha?</a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
+                    <label for="name">Sobrenome*</label>
+                    <input id="nme_sobrenome_cliente" name="nme_sobrenome_cliente" required="required" type="text">
 
+                    <label for="select">Data de Nascimento*</label>
+                    <input id="dta_nasc_cliente" name="dta_nasc_cliente" required="required" type="date">
 
-			</div>
-			<h6>Já possui uma conta? <a href="/login">Faça login »</a> </h6>
-		</div>
-	</div>
+                    <label for="email">Email*</label>
+                    <input id="eml_cliente" name="eml_cliente" required="required" type="email">
+
+                    <label for="publicinfo">Endereço*</label>
+                    <input id="end_cliente" name="end_cliente" required="required" type="text">
+
+                    <label for="newpass">Telefone*</label>
+                    <input id="tel_cliente" name="tel_cliente" maxlength="11" placeholder="00-00000-0000"
+                           required="required" type="text">
+
+                    <label for="newpass">CPF*</label>
+
+                    <input id="cpf_cliente" name="cpf_cliente" maxlength="11" placeholder="000.000.000-00"
+                               required="required" type="text">
+
+                    <label for="website">RG*</label>
+                    <input id="rg_cliente" name="rg_cliente" maxlength="7" type="text" required="required">
+
+                    <label for="newpass">Senha*</label>
+                    <input id="pwd_cliente" name="pwd_cliente" required="required" type="text">
+
+                    <input type="hidden" name="_target_path" value="/">
+                    <input type="hidden" name="_csrf_token" value="-Xk8X5Q2tvtbO-7KcmLxtxN-2rYfbfiLXOnpA7atJ5Q">
+
+                    <button type="submit">Cadastrar</button>
+                </form>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-success" hidden></div>
+                        <div class="alert alert-danger" hidden></div>
+                    </div>
+                </div>
+            </div>
+            <h6>Já possui uma conta? <a href="/login">Faça login »</a></h6>
+        </div>
+    </div>
 
 {% endblock %}

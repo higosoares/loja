@@ -187,7 +187,7 @@ class __TwigTemplate_5320483f94559458be25ce2098e9e2657921e7963390dc8b0ff439063dd
         // line 30
         echo "<div class=\"form-group";
         if ((( !(isset($context["compound"]) || array_key_exists("compound", $context) ? $context["compound"] : (function () { throw new Twig_Error_Runtime('Variable "compound" does not exist.', 30, $this->source); })()) || (((isset($context["force_error"]) || array_key_exists("force_error", $context))) ? (_twig_default_filter((isset($context["force_error"]) || array_key_exists("force_error", $context) ? $context["force_error"] : (function () { throw new Twig_Error_Runtime('Variable "force_error" does not exist.', 30, $this->source); })()), false)) : (false))) &&  !(isset($context["valid"]) || array_key_exists("valid", $context) ? $context["valid"] : (function () { throw new Twig_Error_Runtime('Variable "valid" does not exist.', 30, $this->source); })()))) {
-            echo " has-error";
+            echo " has-bundles";
         }
         echo "\">";
         // line 31
@@ -312,7 +312,7 @@ class __TwigTemplate_5320483f94559458be25ce2098e9e2657921e7963390dc8b0ff439063dd
         // line 63
         echo "<div class=\"form-group";
         if ( !(isset($context["valid"]) || array_key_exists("valid", $context) ? $context["valid"] : (function () { throw new Twig_Error_Runtime('Variable "valid" does not exist.', 63, $this->source); })())) {
-            echo " has-error";
+            echo " has-bundles";
         }
         echo "\">";
         // line 64
@@ -380,7 +380,7 @@ col-sm-2
     {%- if help is not empty -%}
         {%- set widget_attr = {attr: {'aria-describedby': id ~\"_help\"}} -%}
     {%- endif -%}
-    <div class=\"form-group{% if (not compound or force_error|default(false)) and not valid %} has-error{% endif %}\">
+    <div class=\"form-group{% if (not compound or force_error|default(false)) and not valid %} has-bundles{% endif %}\">
         {{- form_label(form) -}}
         <div class=\"{{ block('form_group_class') }}\">
             {{- form_widget(form, widget_attr) -}}
@@ -413,7 +413,7 @@ col-sm-10
 {%- endblock form_group_class %}
 
 {% block checkbox_row -%}
-    <div class=\"form-group{% if not valid %} has-error{% endif %}\">{#--#}
+    <div class=\"form-group{% if not valid %} has-bundles{% endif %}\">{#--#}
         <div class=\"{{ block('form_label_class') }}\"></div>{#--#}
         <div class=\"{{ block('form_group_class') }}\">
             {{- form_widget(form) -}}

@@ -105,7 +105,7 @@ class __TwigTemplate_5151fad3bb8803f16c4dad8af58daa1a688e6e40892aad47d477b695ae8
             foreach ($context['_seq'] as $context["_key"] => $context["result"]) {
                 // line 36
                 echo "                    ";
-                $context["css_class"] = (((((twig_get_attribute($this->env, $this->source, $context["result"], "status_code", array(), "any", true, true)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, $context["result"], "status_code", array()), 0)) : (0)) > 399)) ? ("status-error") : ((((((twig_get_attribute($this->env, $this->source, $context["result"], "status_code", array(), "any", true, true)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, $context["result"], "status_code", array()), 0)) : (0)) > 299)) ? ("status-warning") : ("status-success"))));
+                $context["css_class"] = (((((twig_get_attribute($this->env, $this->source, $context["result"], "status_code", array(), "any", true, true)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, $context["result"], "status_code", array()), 0)) : (0)) > 399)) ? ("status-bundles") : ((((((twig_get_attribute($this->env, $this->source, $context["result"], "status_code", array(), "any", true, true)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, $context["result"], "status_code", array()), 0)) : (0)) > 299)) ? ("status-warning") : ("status-success"))));
                 // line 37
                 echo "
                     <tr>
@@ -281,7 +281,7 @@ class __TwigTemplate_5151fad3bb8803f16c4dad8af58daa1a688e6e40892aad47d477b695ae8
             </thead>
             <tbody>
                 {% for result in tokens %}
-                    {% set css_class = result.status_code|default(0) > 399 ? 'status-error' : result.status_code|default(0) > 299 ? 'status-warning' : 'status-success' %}
+                    {% set css_class = result.status_code|default(0) > 399 ? 'status-bundles' : result.status_code|default(0) > 299 ? 'status-warning' : 'status-success' %}
 
                     <tr>
                         <td class=\"text-center\">

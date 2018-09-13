@@ -4,14 +4,14 @@ namespace App\Controller;
 
 use App\Entity\Perfil;
 use App\Form\PerfilType;
-use App\Repository\PerfilRepository;
+use App\Repository\Perfil\PerfilRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/perfil")
+ * @Route("/perfil2")
  */
 class PerfilController extends Controller
 {

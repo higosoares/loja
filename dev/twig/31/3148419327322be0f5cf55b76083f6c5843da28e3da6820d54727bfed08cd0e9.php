@@ -239,7 +239,7 @@ class __TwigTemplate_f11bac89679a0ede41a1b9a2500616a46b875970af125064deea31a3730
                 ";
             // line 61
             if ((((twig_get_attribute($this->env, $this->source, ($context["logger"] ?? null), "counterrors", array(), "any", true, true) &&  !(null === twig_get_attribute($this->env, $this->source, ($context["logger"] ?? null), "counterrors", array())))) ? (twig_get_attribute($this->env, $this->source, ($context["logger"] ?? null), "counterrors", array())) : (false))) {
-                echo "<span class=\"badge status-error\">";
+                echo "<span class=\"badge status-bundles\">";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["logger"]) || array_key_exists("logger", $context) ? $context["logger"] : (function () { throw new Twig_Error_Runtime('Variable "logger" does not exist.', 61, $this->source); })()), "counterrors", array()), "html", null, true);
                 echo "</span>";
             }
@@ -432,7 +432,7 @@ class __TwigTemplate_f11bac89679a0ede41a1b9a2500616a46b875970af125064deea31a3730
         <div class=\"tab {{ logger.logs is empty ? 'disabled' }}\">
             <h3 class=\"tab-title\">
                 Logs
-                {% if logger.counterrors ?? false %}<span class=\"badge status-error\">{{ logger.counterrors }}</span>{% endif %}
+                {% if logger.counterrors ?? false %}<span class=\"badge status-bundles\">{{ logger.counterrors }}</span>{% endif %}
             </h3>
 
             <div class=\"tab-content\">

@@ -18,7 +18,7 @@ class Cliente implements UserInterface, \Serializable
      *
      * @ORM\Column(name="nome_cliente", type="string", length=255, nullable=false)
      */
-    private $nomeCliente;
+    private $userName;
 
     /**
      * @var string
@@ -74,7 +74,7 @@ class Cliente implements UserInterface, \Serializable
      *
      * @ORM\Column(name="pwd_cliente", type="string", length=45, nullable=false)
      */
-    private $pwdCliente;
+    private $password;
 
     /**
      * @var integer
@@ -88,27 +88,27 @@ class Cliente implements UserInterface, \Serializable
 
 
     /**
-     * Set nomeCliente
+     * Set userName
      *
-     * @param string $nomeCliente
+     * @param string $userName
      *
      * @return Cliente
      */
-    public function setUsername($nomeCliente)
+    public function setUsername($userName)
     {
-        $this->nomeCliente = $nomeCliente;
+        $this->userName = $userName;
 
         return $this;
     }
 
     /**
-     * Get nomeCliente
+     * Get userName
      *
      * @return string
      */
     public function getUsername()
     {
-        return $this->nomeCliente;
+        return $this->userName;
     }
 
     /**
@@ -280,27 +280,27 @@ class Cliente implements UserInterface, \Serializable
     }
 
     /**
-     * Set pwdCliente
+     * Set password
      *
-     * @param string $pwdCliente
+     * @param string $password
      *
      * @return Cliente
      */
-    public function setPassword($pwdCliente)
+    public function setPassword($password)
     {
-        $this->pwdCliente = $pwdCliente;
+        $this->password = $password;
 
         return $this;
     }
 
     /**
-     * Get pwdCliente
+     * Get password
      *
      * @return string
      */
     public function getPassword()
     {
-        return $this->pwdCliente;
+        return $this->password;
     }
 
     /**
@@ -343,9 +343,9 @@ class Cliente implements UserInterface, \Serializable
     {
         return serialize(array(
             $this->idCliente,
-            $this->nomeCliente,
+            $this->userName,
             $this->nmeSobrenomeCliente,
-            $this->pwdCliente,
+            $this->password,
             $this->cpfCliente,
             $this->dtaNascCliente,
             $this->emlCliente,
@@ -362,9 +362,9 @@ class Cliente implements UserInterface, \Serializable
     {
         list (
             $this->idCliente,
-            $this->nomeCliente,
+            $this->userName,
             $this->nmeSobrenomeCliente,
-            $this->pwdCliente,
+            $this->password,
             $this->cpfCliente,
             $this->dtaNascCliente,
             $this->emlCliente,

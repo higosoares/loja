@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\TipoPerfil;
 
 use App\Entity\TipoPerfil;
 use App\Form\TipoPerfilType;
-use App\Repository\TipoPerfilRepository;
+use App\Repository\TipoPerfil\TipoPerfilRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
