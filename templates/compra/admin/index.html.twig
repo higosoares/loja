@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<meta charset="utf-8">
+<a class="btn btn-default" href="/admin">Voltar</a>
+<a class="btn btn-default" href="/admin/compra/cadastrar">Novo</a>
+<hr>
+<h2 class="page-header">compra</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Forma de pagamento</th>
+			<th>Carrinho Produto</th>
+			<th>Desconto</th>
+			<th>Taxa</th>
+			<th>Total</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		{% for compra in compras %}
+			<th scope="row">{{ compra.idCompra }}</th>
+			<td>{{ compra.codFormapagamento.dscFormapagamento }}</td>
+			<td>{{ compra.codCarrinhoProduto.idCarrinhoProduto }}</td>
+			<td>{{ compra.vlrDescontoCompra }}</td>
+			<td>{{ compra.vlrTaxaCompra }}</td>
+			<td>{{ compra.vlrTotalCompra }}</td>
+			<td><a href="/admin/compra/detalhes/{{ compra.idCompra }}" class="btn btn-success">Ver</a>
+			<a href="/admin/compra/editar/{{ compra.idCompra }}" class="btn btn-default">Editar</a>
+			<a href="/admin/compra/deletar/{{ compra.idCompra }}" class="btn btn-danger">Deletar</a>
+			</td>
+			</tr>
+		{% endfor %}
+
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+
+{% endblock %}
